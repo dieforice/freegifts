@@ -1,9 +1,10 @@
 from flask import *
+import os
 import mlab
 from mongoengine import *
 from models.girl_types import GirlType, dump_data
 app = Flask(__name__)
-
+app.config["SECRET_KEY"] = "jroweror3PƯƠ]ơ4oo32porwe342e3&^&^&#^@)(@(#or4343r"
 mlab.connect()
 
 
@@ -27,7 +28,10 @@ def bmi():
 
 @app.route('/admin')
 def admin():
-    return render_template('admin.html', girl_types=GirlType.objects())
+    if "admin" not in session:
+        abort(403)
+    else:
+        return render_template('admin.html', girl_types=GirlType.objects())
 
 @app.route('/delete_girl_type/<girl_id>')
 def delete_girl_type(girl_id):
@@ -42,11 +46,38 @@ def view_girl_type(girl_id):
     if girl_type is not None:
         return render_template('view.html', girl_type = girl_type)
 
-@app.route('/edit_girl_type/<girl_id>')
+@app.route('/edit_girl_type/<girl_id>', methods = ['GET','POST'])
 def edit_girl_type(girl_id):
     girl_type = GirlType.objects().with_id(girl_id)
-    if girl_type is not None:
-        return render_template('edit.html', girl_type = girl_type)
+    if request.method == "GET":
+        if girl_type is not None:
+            return render_template('edit.html', girl_type = girl_type)
+    elif request.method == "POST":
+        form = request.form
+        name = form["name"]
+        image = form["image"]
+        description = form["description"]
+        girl_type.update(set__name=name, set__image=image, set__description=description)
+        return redirect('/admin')
+
+@app.route('/login', methods = ["GET", "POST"])
+def login():
+    if request.method == "GET":
+        return render_template('login.html')
+    elif request.method == "POST":
+        form = request.form
+        username = form["username"]
+        password = form["password"]
+        if username == "admin" and password == "admin":
+            session['admin'] = True
+            return redirect('/admin')
+        else:
+            return "Nub"
+
+@app.route('/images/<image_name>')
+def image(image_name):
+    image_folder = os.path.join(app.root_path, "static", "images")
+    return send_from_directory(image_folder, image_name)
 
 if __name__ == '__main__':
   app.run(debug=True)

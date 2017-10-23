@@ -1,5 +1,35 @@
 {% extends "base.html" %}
 
 {% block page_content %}
+<div class="container">
+  <div class="clearfix">
+      <a href="/login">
+        <button class="btn btn-danger float-right text-white" type="submit" name="button">Sign In</button>
+      </a>
+  </div>
+  <div class="row">
+    <div class="col-lg-3">
+      <h3>Present</h3>
+  </div>
+
+    <div class="col-lg-6 col-sm-12">
+      <h3>QUESTION</h3>
+      <h4>1 + 1 =??</h4>
+      <h4> A. 2 <br> B. 3 <br> C. 4 <br> D. 5</h4>
+      <label for="">ANSWER</label>
+      <input type="text" name="Answer" value="">
+      <br>
+      <button type="submit" name="button" class="btn btn-danger float-right">Check</button>
+    </div>
+
+    <div class="col-lg-3">
+      <h3>How to play</h3>
+    </div>
+  </div>
+
+</div>
+
+
+
 
 {% endblock%}

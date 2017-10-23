@@ -1,18 +1,3 @@
-.card-girl-type {
-  min-height: 420px !important;
-}
-
-.card-girl-img {
-  object-fit: cover;
-  height: 20vw !important;
-}
-#bala {
-  min-width: 1300px;
-}
-#bolo {
-  min-width: 400px;
-}
-.login-form {
-  max-width: 500px;
-  margin: 0 auto;
+#testgift{
+  background-color: red;
 }

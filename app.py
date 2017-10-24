@@ -1,6 +1,7 @@
 from flask import *
 import os
 import mlab
+import random
 from mongoengine import *
 from models.questions import Question
 from models.users import User
@@ -10,7 +11,9 @@ mlab.connect()
 
 @app.route('/',  methods = ["GET", "POST"])
 def index():
-    return render_template('index.html', questions=Question.objects())
+    if request.method == "GET":
+        a = random.randint(0,11)
+        return render_template('index.html', questions=Question.objects()[a])
 
 @app.route('/admin')
 def admin():

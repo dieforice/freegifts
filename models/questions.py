@@ -10,5 +10,5 @@ class Question(Document): #Collection
     answerD = StringField()
     correct_answer = StringField()
 
-#task = Question(question = "I managed to finish all the work _______________ I was very tired", answerA = "although", answerB = "so", answerC = "but", answerD = "because")
-#task.save()
+task = Question(question = "If I _____ an animal, I ______ a cat", answerA="was/will be", answerB = "was/would be", answerC = "were/will be", answerD = "were/would be", correct_answer = "were/would be")
+task.save()

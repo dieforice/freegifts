@@ -13,7 +13,9 @@ mlab.connect()
 def index():
     if request.method == "GET":
         a = random.randint(0,11)
-        return render_template('index.html', questions=Question.objects()[a])
+        b = random.randint(11,21)
+        c = random.randint(21,31)
+        return render_template('index.html', questions=Question.objects()[a], questions2=Question.objects()[b], questions3=Question.objects()[c])
 
 @app.route('/admin')
 def admin():

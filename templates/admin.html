@@ -7,13 +7,24 @@
       <tr>
         <th>#</th>
         <th>Questions</th>
+        <th>Answer A</th>
+        <th>Answer B</th>
+        <th>Answer C</th>
+        <th>Answer D</th>
+        <th>Correct Answer</th>
         <th>Edit</th>
       </tr>
     </thead>
     <tbody>
+      {% for quest in questions %}
       <tr>
-        <td>1</td>
-        <td>DAJDAJHDLKAJSDLKH</td>
+        <td>{{ loop.index }}</td>
+        <td>{{ quest.question}}</td>
+        <td>{{ quest.answerA }}</td>
+        <td>{{ quest.answerB }}</td>
+        <td>{{ quest.answerC }}</td>
+        <td>{{ quest.answerD }}</td>
+        <td>{{ quest.correct_answer }}</td>
         <td>
             <a href="">
               <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -23,6 +34,7 @@
             </a>
         </td>
       </tr>
+      {% endfor %}
     </tbody>
   </table>
 </div>

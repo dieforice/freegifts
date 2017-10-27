@@ -10,5 +10,9 @@ class Question(Document): #Collection
     answerD = StringField()
     correct_answer = StringField()
 
+<<<<<<< HEAD
 #task = Question(question = "If I _____ an animal, I ______ a cat", answerA="was/will be", answerB = "was/would be", answerC = "were/will be", answerD = "were/would be", correct_answer = "were/would be")
+=======
+#task = Question(question = "Alexander the Great created one of the largest _______ of the ancient world ____ the age of thirty", answerA = "kingdoms/up until", answerB = "empires/at", answerC = "empires/by", answerD = "nations/at", correct_answer = "empires/by")
+>>>>>>> b997075ffa28c1a077ff2f862f338368632575f3
 #task.save()

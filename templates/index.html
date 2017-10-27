@@ -20,32 +20,42 @@
       <form class="" action="/" method="post">
         <div class="card mb-2">
           <div class="card-body">
-            <h3 id="quest">QUESTION</h3>
-            <h3 class = "lead">Multiple Choices</h3>
-            <h6>Question 1: {{questions.question}}</h6>
-            <h6>A. {{questions.answerA}} <br>B. {{questions.answerB}} <br>C. {{questions.answerC}} <br>D. {{questions.answerD}}</h6>
-            <label for="">Answer</label>
-            <input type="text" name="answer1" value="">
+            <h3 class = "text-center" id="quest">QUESTIONS</h3>
+            <h3 class = "lead text-center m-2">Multiple Choices</h3>
+            <div class="mb-2">
+              <h6>Question 1: {{questions.question}}</h6>
+              <h6>A. {{questions.answerA}} <br>B. {{questions.answerB}} <br>C. {{questions.answerC}} <br>D. {{questions.answerD}}</h6>
+              <label for="">Answer</label>
+              <input type="text" name="answer1" value="">
+            </div>
             <br>
-            <h6>Question 2: {{questions2.question}}</h6>
-            <h6>A. {{questions2.answerA}} <br>B. {{questions2.answerB}} <br>C. {{questions2.answerC}} <br>D. {{questions2.answerD}}</h6>
-            <label for="">Answer</label>
-            <input type="text" name="answer2" value="">
+            <div class="mb-2">
+              <h6>Question 2: {{questions2.question}}</h6>
+              <h6>A. {{questions2.answerA}} <br>B. {{questions2.answerB}} <br>C. {{questions2.answerC}} <br>D. {{questions2.answerD}}</h6>
+              <label for="">Answer</label>
+              <input type="text" name="answer2" value="">
+            </div>
             <br>
-            <h6>Question 3: {{questions3.question}}</h6>
-            <h6>A. {{questions3.answerA}} <br>B. {{questions3.answerB}} <br>C. {{questions3.answerC}} <br>D. {{questions3.answerD}}</h6>
-            <label for="">Answer</label>
-            <input type="text" name="answer3" value="">
+            <div class="mb-2">
+              <h6>Question 3: {{questions3.question}}</h6>
+              <h6>A. {{questions3.answerA}} <br>B. {{questions3.answerB}} <br>C. {{questions3.answerC}} <br>D. {{questions3.answerD}}</h6>
+              <label for="">Answer</label>
+              <input type="text" name="answer3" value="">
+            </div>
             <br>
-            <h6>Question 4: {{questions4.question}}</h6>
-            <h6>A. {{questions4.answerA}} <br>B. {{questions4.answerB}} <br>C. {{questions4.answerC}} <br>D. {{questions4.answerD}}</h6>
-            <label for="">Answer</label>
-            <input type="text" name="answer4" value="">
+            <div class="mb-2">
+              <h6>Question 4: {{questions4.question}}</h6>
+              <h6>A. {{questions4.answerA}} <br>B. {{questions4.answerB}} <br>C. {{questions4.answerC}} <br>D. {{questions4.answerD}}</h6>
+              <label for="">Answer</label>
+              <input type="text" name="answer4" value="">
+            </div>
             <br>
-            <h3 class = "lead">Stress</h3>
-            <h6>A. {{stress.answerA}} <br>B. {{stress.answerB}} <br>C. {{stress.answerC}} <br>D. {{stress.answerD}}</h6>
-            <label for="">Answer</label>
-            <input type="text" name="answer5" value="">
+            <h3 class = "lead text-center mb-2">Stress</h3>
+            <div class="mb-2">
+              <h6>A. {{stress.answerA}} <br>B. {{stress.answerB}} <br>C. {{stress.answerC}} <br>D. {{stress.answerD}}</h6>
+              <label for="">Answer</label>
+              <input type="text" name="answer5" value="">
+            </div>
             <button type="submit" name="button" class="btn btn-danger float-right">Check</button>
           </div>
         </div>

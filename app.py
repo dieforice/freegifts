@@ -12,10 +12,10 @@ mlab.connect()
 @app.route('/',  methods = ["GET", "POST"])
 def index():
     if request.method == "GET":
-        a = random.randint(0,11)
-        b = random.randint(11,21)
-        c = random.randint(21,31)
-        d = random.randint(31,41)
+        a = random.randint(0,10)
+        b = random.randint(11,20)
+        c = random.randint(21,30)
+        d = random.randint(31,40)
         return render_template('index.html', questions=Question.objects()[a], questions2=Question.objects()[b], questions3=Question.objects()[c], questions4=Question.objects()[d], stress=Stress.objects()[a])
     elif request.method == "POST":
         form = request.form

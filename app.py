@@ -11,6 +11,7 @@ mlab.connect()
 
 @app.route('/',  methods = ["GET", "POST"])
 def index():
+    point = 0
     a = random.randint(0,9)
     b = random.randint(10,19)
     c = random.randint(20,29)
@@ -35,15 +36,16 @@ def index():
         question4 = Question.objects().with_id(id4)
         stress1 = Stress.objects().with_id(id5)
         if answer1 == question1.correct_answer:
-            return render_template('login.html')
+            point += 1
         if answer2 == question2.correct_answer:
-            return render_template('login.html')
+            point += 1
         if answer3 == question3.correct_answer:
-            return render_template('login.html')
+            point += 1
         if answer4 == question4.correct_answer:
-            return render_template('login.html')
+            point += 1
         if answer5 == stress1.correct_answer:
-            return render_template('login.html')
+            point += 1
+        return (str(point))
 @app.route('/admin', methods = ["GET","POST"])
 def admin():
     if request.method == "GET":

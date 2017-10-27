@@ -2,11 +2,7 @@
 
 {% block page_content %}
 <div class="container">
-  <form class="" action="/edit_mp/{{question_edit.id}}"  enctype="multipart/form-data" method="post">
-    <div class="form-group">
-      <label for="" class= "d-block">Question</label>
-      <textarea name="question" rows="5" cols="60" class = "form-control">{{question_edit.question}}</textarea>
-    </div>
+  <form class="" action="/edit_stress/{{question_edit.id}}"  enctype="multipart/form-data" method="post">
     <div class="form-group">
       <label for="" class= "d-block">Answer A</label>
       <input type="text" name="answerA" value="{{question_edit.answerA}}" class = "form-control">

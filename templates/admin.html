@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block page_content%}
+<h3 class ="text-center text-danger mb-3">Multiple Choices</h3>
 <div class="container">
   <table class="table table-inverse">
     <thead>
@@ -29,9 +30,6 @@
             <a href="">
               <i class="fa fa-pencil" aria-hidden="true"></i>
             </a>
-            <a href="">
-              <i class="fa fa-trash" aria-hidden="true"></i>
-            </a>
         </td>
       </tr>
       {% endfor %}
@@ -39,5 +37,37 @@
   </table>
 </div>
 
+<h3 class ="text-center text-danger mb-3">Stress</h3>
+<div class="container">
+  <table class="table table-inverse">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Answer A</th>
+        <th>Answer B</th>
+        <th>Answer C</th>
+        <th>Answer D</th>
+        <th>Correct Answer</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for str in stress %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ str.answerA }}</td>
+        <td>{{ str.answerB }}</td>
+        <td>{{ str.answerC }}</td>
+        <td>{{ str.answerD }}</td>
+        <td>{{ str.correct_answer }}</td>
+        <td>
+            <a href="">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 
 {% endblock%}

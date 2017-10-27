@@ -44,12 +44,13 @@ def index():
             return render_template('login.html')
         if answer5 == stress1.correct_answer:
             return render_template('login.html')
-@app.route('/admin')
+@app.route('/admin', methods = ["GET","POST"])
 def admin():
-    if "admin" not in session:
-        return abort(403)
-    else:
-        return render_template('admin.html', questions=Question.objects())
+    if request.method == "GET":
+        if "admin" not in session:
+            return abort(403)
+        else:
+            return render_template('admin.html', questions=Question.objects(), stress = Stress.objects())
 
 @app.route('/login', methods = ["GET", "POST"])
 def login():
@@ -59,8 +60,6 @@ def login():
         form = request.form
         username = form["username"]
         password = form["password"]
-
-
     if username == "admin" and password == "admin":
         session['admin'] = True
         return redirect('/admin')

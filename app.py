@@ -66,6 +66,21 @@ def login():
     else:
         return abort(403)
 
-
+@app.route('/edit_question/<question_id>', methods = ["GET","POST"])
+def edit_question(question_id):
+    question_edit= Question.objects().with_id(question_id)
+    if request.method == "GET":
+        if question_edit is not None:
+            return render_template('edit_mp.html', question_edit = question_edit)
+    elif request.method =="POST":
+        form = request.form
+        question = form["question"]
+        answerA = form["answerA"]
+        answerB = form["answerB"]
+        answerC = form["answerC"]
+        answerD = form["answerD"]
+        correct_answer = form["correct_answer"]
+        question_edit.update(set__question = question, set__answerA= answerA, set__answerB =answerB, set__answerC = answerC, set__answerD= answerD, set__correct_answer = correct_answer)
+        return redirect('/admin')
 if __name__ == '__main__':
   app.run(debug=True)

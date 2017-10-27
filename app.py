@@ -16,7 +16,7 @@ def index():
         b = random.randint(11,21)
         c = random.randint(21,31)
         d = random.randint(31,41)
-        return render_template('index.html', questions=Question.objects()[a], questions2=Question.objects()[b], questions3=Question.objects()[c], questions4=Question.objects()[d])
+        return render_template('index.html', questions=Question.objects()[a], questions2=Question.objects()[b], questions3=Question.objects()[c], questions4=Question.objects()[d], stress = Stress.object()[a])
 
 @app.route('/admin')
 def admin():

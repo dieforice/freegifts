@@ -60,11 +60,23 @@ def login():
         form = request.form
         username = form["username"]
         password = form["password"]
+        # user = User.objects(username=username).first()
+    # if user is None:
+    #         flash("No such user")
+    #         return render_template("login.html")
+    # else:
+    #     if user.password != password:
+    #         flash("Wrong password")
+    #         return render_template('login.html')
+    #     else:
+    #         session['admin'] = True
+    #         return redirect('admin')
     if username == "admin" and password == "admin":
         session['admin'] = True
         return redirect('/admin')
     else:
-        return abort(403)
+        flash("Username or Password was wrong")
+        return render_template("login.html")
 
 @app.route('/edit_mp/<question_id>', methods = ["GET","POST"])
 def edit_mp(question_id):

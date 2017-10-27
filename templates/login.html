@@ -14,5 +14,10 @@
     <button type="submit" name="button" class="btn btn-primary">Login</button>
   </form>
 </div>
+{% for message in get_flashed_messages() %}
+<div class="text-danger login-form">
+  {{ message }}
+</div>
+{% endfor %}
 
 {% endblock%}

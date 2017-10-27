@@ -6,7 +6,7 @@ from mongoengine import *
 from models.questions import Question, Stress
 from models.users import User
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "jroweror3PƯƠ]ơ4oo32porwe342e3&^&^&#^@)(@(#or4343r"
+app.config["SECRET_KEY"] = "jroweror3PƯo32porwe342e3&^&^&#^@)(@(#or4343r"
 mlab.connect()
 
 @app.route('/',  methods = ["GET", "POST"])
@@ -60,11 +60,23 @@ def login():
         form = request.form
         username = form["username"]
         password = form["password"]
-    if username == "admin" and password == "admin":
-        session['admin'] = True
-        return redirect('/admin')
+        user = User.objects(username=username).first()
+    if user is None:
+            flash("No such user")
+            return render_template("login.html")
     else:
-        return abort(403)
+        if user.password != password:
+            flash("Wrong password")
+            return render_template('login.html')
+        else:
+            session['admin'] = True
+            return redirect('admin')
+    # if username == "admin" and password == "admin":
+    #     session['admin'] = True
+    #     return redirect('/admin')
+    # else:
+    #     flash("Username or Password was wrong")
+    #     return render_template("login.html")
 
 @app.route('/edit_mp/<question_id>', methods = ["GET","POST"])
 def edit_mp(question_id):

@@ -20,4 +20,4 @@ class Stress(Document): #Collection
 
 #task = Question(question = "Alexander the Great created one of the largest _______ of the ancient world ____ the age of thirty", answerA = "kingdoms/up until", answerB = "empires/at", answerC = "empires/by", answerD = "nations/at", correct_answer = "empires/by")
 #task = Stress(answerA = "technical", answerB = "government", answerC = "parallel", answerD = "understand", correct_answer= "understand")
-task.save()
+#task.save()

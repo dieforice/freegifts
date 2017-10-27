@@ -11,12 +11,12 @@ mlab.connect()
 
 @app.route('/',  methods = ["GET", "POST"])
 def index():
+    a = random.randint(0,10)
+    b = random.randint(11,20)
+    c = random.randint(21,30)
+    d = random.randint(31,40)
     if request.method == "GET":
-        a = random.randint(0,10)
-        b = random.randint(11,20)
-        c = random.randint(21,30)
-        d = random.randint(31,40)
-        return render_template('index.html', questions=Question.objects()[a], questions2=Question.objects()[b], questions3=Question.objects()[c], questions4=Question.objects()[d], stress=Stress.objects()[a])
+        return render_template('index.html', question=Question.objects()[a], question2=Question.objects()[b], question3=Question.objects()[c], question4=Question.objects()[d], stress=Stress.objects()[a])
     elif request.method == "POST":
         form = request.form
         answer1 = form["answer1"]
@@ -24,15 +24,25 @@ def index():
         answer3 = form["answer3"]
         answer4 = form["answer4"]
         answer5 = form["answer5"]
-        if answer1 == Question.objects(correct_answer)[a]:
+        id1 = form['id1']
+        id2 = form['id2']
+        id3 = form['id3']
+        id4 = form['id4']
+        id5 = form['id5']
+        question1 = Question.objects().with_id(id1)
+        question2 = Question.objects().with_id(id2)
+        question3 = Question.objects().with_id(id3)
+        question4 = Question.objects().with_id(id4)
+        stress1 = Stress.objects().with_id(id5)
+        if answer1 == question1.correct_answer:
             return render_template('login.html')
-        if answer2 == Question.objects(correct_answer)[b]:
+        if answer2 == question2.correct_answer:
             return render_template('login.html')
-        if answer3 == Question.objects(correct_answer)[c]:
+        if answer3 == question3.correct_answer:
             return render_template('login.html')
-        if answer4 == Question.objects(correct_answer)[d]:
+        if answer4 == question4.correct_answer:
             return render_template('login.html')
-        if answer5 == Stress.objects(correct_answer)[a]:
+        if answer5 == stress1.correct_answer:
             return render_template('login.html')
 @app.route('/admin')
 def admin():

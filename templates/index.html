@@ -23,7 +23,8 @@
             <h3 class = "text-center" id="quest">QUESTIONS</h3>
             <h3 class = "lead text-center m-2">Multiple Choices</h3>
             <div class="mb-2">
-              <h6>Question 1: {{question.question}}</h6>
+              <h6 class="text-danger">Question 1:</h6>
+              <h6>{{question.question}}</h6>
               <h6>A. {{question.answerA}} <br>B. {{question.answerB}} <br>C. {{question.answerC}} <br>D. {{question.answerD}}</h6>
               <label for="">Answer</label>
               <input type="text" name="answer1" value="">
@@ -31,7 +32,8 @@
             </div>
             <br>
             <div class="mb-2">
-              <h6>Question 2: {{question2.question}}</h6>
+              <h6 class="text-danger">Question 2:</h6>
+              <h6>{{question2.question}}</h6>
               <h6>A. {{question2.answerA}} <br>B. {{question2.answerB}} <br>C. {{question2.answerC}} <br>D. {{question2.answerD}}</h6>
               <label for="">Answer</label>
               <input type="text" name="answer2" value="">
@@ -39,7 +41,8 @@
             </div>
             <br>
             <div class="mb-2">
-              <h6>Question 3: {{question3.question}}</h6>
+              <h6 class="text-danger">Question 3:</h6>
+              <h6> {{question3.question}}</h6>
               <h6>A. {{question3.answerA}} <br>B. {{question3.answerB}} <br>C. {{question3.answerC}} <br>D. {{question3.answerD}}</h6>
               <label for="">Answer</label>
               <input type="text" name="answer3" value="">
@@ -47,14 +50,15 @@
             </div>
             <br>
             <div class="mb-2">
-              <h6>Question 4: {{question4.question}}</h6>
+              <h6 class="text-danger">Question 4:</h6>
+              <h6> {{question4.question}}</h6>
               <h6>A. {{question4.answerA}} <br>B. {{question4.answerB}} <br>C. {{question4.answerC}} <br>D. {{question4.answerD}}</h6>
               <label for="">Answer</label>
               <input type="text" name="answer4" value="">
               <input class="d-none" type="text" name="id4" value="{{ question4.id }}">
             </div>
             <br>
-            <h3 class = "lead text-center mb-2">Stress</h3>
+            <h3 class = "lead text-center mb-2 text-primary">Stress</h3>
             <div class="mb-2">
               <h6>A. {{stress.answerA}} <br>B. {{stress.answerB}} <br>C. {{stress.answerC}} <br>D. {{stress.answerD}}</h6>
               <label for="">Answer</label>

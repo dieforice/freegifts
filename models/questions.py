@@ -17,3 +17,6 @@ class Stress(Document): #Collection
     answerC = StringField()
     answerD = StringField()
     correct_answer = StringField()
+
+#task = Stress(answerA = "reference", answerB = "decision", answerC = "refusal", answerD = "important", correct_answer = "reference")
+#task.save()

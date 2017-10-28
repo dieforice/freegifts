@@ -3,7 +3,7 @@ import os
 import mlab
 import random
 from mongoengine import *
-from models.questions import Question, Stress
+from models.questions import Question, Stress, Vocab
 from models.users import User
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "jroweror3PƯo32porwe342e3&^&^&#^@)(@(#or4343r"
@@ -17,7 +17,7 @@ def index():
     c = random.randint(20,29)
     d = random.randint(30,39)
     if request.method == "GET":
-        return render_template('index.html', question=Question.objects()[a], question2=Question.objects()[b], question3=Question.objects()[c], question4=Question.objects()[d], stress=Stress.objects()[a],stress2 = Stress.objects()[b])
+        return render_template('index.html', question=Question.objects()[a], question2=Question.objects()[b], question3=Question.objects()[c], question4=Question.objects()[d], stress=Stress.objects()[a],stress2 = Stress.objects()[b], vocab= Vocab.objects()[a])
     elif request.method == "POST":
         form = request.form
         answer1 = form["answer1"]
@@ -26,18 +26,21 @@ def index():
         answer4 = form["answer4"]
         answer5 = form["answer5"]
         answer6 = form["answer6"]
+        answer7 = form["answer7"]
         id1 = form['id1']
         id2 = form['id2']
         id3 = form['id3']
         id4 = form['id4']
         id5 = form['id5']
         id6 = form['id6']
+        id7 = form['id7']
         question1 = Question.objects().with_id(id1)
         question2 = Question.objects().with_id(id2)
         question3 = Question.objects().with_id(id3)
         question4 = Question.objects().with_id(id4)
         stress1 = Stress.objects().with_id(id5)
         stress2 = Stress.objects().with_id(id6)
+        vocab = Vocab.objects().with_id(id7)
         if answer1 == question1.correct_answer:
             point += 1
         if answer2 == question2.correct_answer:
@@ -49,6 +52,8 @@ def index():
         if answer5 == stress1.correct_answer:
             point += 1
         if answer6 == stress2.correct_answer:
+            point += 1
+        if answer7 == vocab.correct_word:
             point += 1
         return (str(point))
 @app.route('/admin', methods = ["GET","POST"])

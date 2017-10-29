@@ -171,3 +171,7 @@ def send_gift(gift_id):
             return render_template('send_gift.html', user_gift = user_gift)
 if __name__ == '__main__':
   app.run(debug=True)
+
+@app.route('/admgift')
+def admingift():
+    return render_template('admingift.html')

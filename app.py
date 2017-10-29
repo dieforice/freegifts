@@ -3,7 +3,7 @@ import os
 import mlab
 import random
 from mongoengine import *
-from models.questions import Question, Stress
+from models.questions import Question, Stress, Vocab
 from models.users import User
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "jroweror3PƯo32porwe342e3&^&^&#^@)(@(#or4343r"
@@ -17,7 +17,7 @@ def index():
     c = random.randint(20,29)
     d = random.randint(30,39)
     if request.method == "GET":
-        return render_template('index.html', question=Question.objects()[a], question2=Question.objects()[b], question3=Question.objects()[c], question4=Question.objects()[d], stress=Stress.objects()[a])
+        return render_template('index.html', question=Question.objects()[a], question2=Question.objects()[b], question3=Question.objects()[c], question4=Question.objects()[d], stress=Stress.objects()[a],stress2 = Stress.objects()[b], vocab= Vocab.objects()[a], vocab2= Vocab.objects()[b])
     elif request.method == "POST":
         form = request.form
         answer1 = form["answer1"]
@@ -25,16 +25,25 @@ def index():
         answer3 = form["answer3"]
         answer4 = form["answer4"]
         answer5 = form["answer5"]
+        answer6 = form["answer6"]
+        answer7 = form["answer7"]
+        answer8 = form["answer8"]
         id1 = form['id1']
         id2 = form['id2']
         id3 = form['id3']
         id4 = form['id4']
         id5 = form['id5']
+        id6 = form['id6']
+        id7 = form['id7']
+        id8 = form['id8']
         question1 = Question.objects().with_id(id1)
         question2 = Question.objects().with_id(id2)
         question3 = Question.objects().with_id(id3)
         question4 = Question.objects().with_id(id4)
         stress1 = Stress.objects().with_id(id5)
+        stress2 = Stress.objects().with_id(id6)
+        vocab = Vocab.objects().with_id(id7)
+        vocab2 = Vocab.objects().with_id(id8)
         if answer1 == question1.correct_answer:
             point += 1
         if answer2 == question2.correct_answer:
@@ -45,6 +54,12 @@ def index():
             point += 1
         if answer5 == stress1.correct_answer:
             point += 1
+        if answer6 == stress2.correct_answer:
+            point += 1
+        if answer7 == vocab.correct_word:
+            point += 1
+        if answer8 == vocab.correct_word:
+            point += 1
         return (str(point))
 @app.route('/admin', methods = ["GET","POST"])
 def admin():
@@ -52,7 +67,7 @@ def admin():
         if "admin" not in session:
             return abort(403)
         else:
-            return render_template('admin.html', questions=Question.objects(), stress = Stress.objects())
+            return render_template('admin.html', questions=Question.objects(), stress = Stress.objects(), vocab = Vocab.objects())
 
 @app.route('/login', methods = ["GET", "POST"])
 def login():
@@ -111,6 +126,22 @@ def edit_stress(question_id):
         answerD = form["answerD"]
         correct_answer = form["correct_answer"]
         question_edit.update(set__answerA= answerA, set__answerB =answerB, set__answerC = answerC, set__answerD= answerD, set__correct_answer = correct_answer)
+        return redirect('/admin')
+
+@app.route('/edit_vocab/<vocab_id>', methods = ["GET","POST"])
+def edit_vocab(vocab_id):
+    vocab_edit= Vocab.objects().with_id(vocab_id)
+    if request.method == "GET":
+        if vocab_edit is not None:
+            return render_template('edit_vocab.html', vocab_edit = vocab_edit)
+    elif request.method =="POST":
+        form = request.form
+        wordA = form["wordA"]
+        wordB = form["wordB"]
+        wordC = form["wordC"]
+        wordD = form["wordD"]
+        correct_word = form["correct_word"]
+        vocab_edit.update(set__wordA= wordA, set__wordB =wordB, set__wordC = wordC, set__wordD= wordD, set__correct_word = correct_word)
         return redirect('/admin')
 
 if __name__ == '__main__':

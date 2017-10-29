@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
 {% block page_content%}
-<h3 class ="text-center text-danger mb-3">Multiple Choices</h3>
 <button type="button" class = "btn btn-danger float-right mr-5 mb-2" name="button"><a class="text-white" href="/">Back to Menu</a></button>
+<br>
 <div class="container">
+  <h3 class ="text-center text-danger mb-3">Multiple Choices</h3>
   <table class="table table-inverse">
     <thead>
       <tr>
@@ -38,8 +39,9 @@
   </table>
 </div>
 
-<h3 class ="text-center text-danger mb-3">Stress</h3>
+
 <div class="container">
+  <h3 class ="text-center text-danger mb-3">Stress</h3>
   <table class="table table-inverse">
     <thead>
       <tr>
@@ -69,6 +71,42 @@
       </tr>
       {% endfor %}
     </tbody>
-  </table>
+    </table>
+
+    <div class="container">
+      <h3 class ="text-center text-danger mb-3">Vocabulary</h3>
+      <table class="table table-inverse">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Word</th>
+            <th>Word A</th>
+            <th>Word B</th>
+            <th>Word C</th>
+            <th>Word D</th>
+            <th>Correct Word</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for voc in vocab %}
+          <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ voc.word}}</td>
+            <td>{{ voc.wordA }}</td>
+            <td>{{ voc.wordB }}</td>
+            <td>{{ voc.wordC }}</td>
+            <td>{{ voc.wordD }}</td>
+            <td>{{ voc.correct_word }}</td>
+            <td>
+                <a href="/edit_vocab/{{voc.id}}">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
 
 {% endblock%}

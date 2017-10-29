@@ -65,6 +65,29 @@
               <input type="text" name="answer5" value="">
               <input class="d-none" type="text" name="id5" value="{{ stress.id }}">
             </div>
+            <div class="mb-2">
+              <h6>A. {{stress2.answerA}} <br>B. {{stress2.answerB}} <br>C. {{stress2.answerC}} <br>D. {{stress2.answerD}}</h6>
+              <label for="">Answer</label>
+              <input type="text" name="answer6" value="">
+              <input class="d-none" type="text" name="id6" value="{{ stress2.id }}">
+            </div>
+            <br>
+            <h3 class = "lead text-center mb-2 text-danger">Vocabulary</h3>
+            <div class="mb-2">
+              <h6> What does {{vocab.word}} mean?</h6>
+              <h6>A. {{vocab.wordA}} <br>B. {{vocab.wordB}} <br>C. {{vocab.wordC}} <br>D. {{vocab.wordD}}</h6>
+              <label for="">Answer</label>
+              <input type="text" name="answer7" value="">
+              <input class="d-none" type="text" name="id7" value="{{ vocab.id }}">
+            </div>
+            <br>
+            <div class="mb-2">
+              <h6> What does {{vocab2.word}} mean?</h6>
+              <h6>A. {{vocab2.wordA}} <br>B. {{vocab2.wordB}} <br>C. {{vocab2.wordC}} <br>D. {{vocab2.wordD}}</h6>
+              <label for="">Answer</label>
+              <input type="text" name="answer8" value="">
+              <input class="d-none" type="text" name="id8" value="{{ vocab2.id }}">
+            </div>
             <button type="submit" name="button" class="btn btn-danger float-right">Check</button>
           </div>
         </div>

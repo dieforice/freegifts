@@ -68,16 +68,16 @@ def index():
             point += 1
         if point == 6:
             user_gift = Gift.objects()[1]
-            gift_id = user_gift.id
-            return (gift_id)
+            gift_idd = str(user_gift.id)
+            return redirect('/send_gift/<gift_idd>')
         elif point == 7:
             user_gift = Gift.objects()[2]
-            gift_id = user_gift.id
-            return (gift_id)
+            gift_idd = str(user_gift.id)
+            return redirect('/send_gift/<gift_idd>')
         elif point == 8:
             user_gift = Gift.objects()[3]
-            gift_id = user_gift.id
-            return (gift_id)
+            gift_idd = str(user_gift.id)
+            return redirect('/send_gift/<gift_idd>')
 
 
 @app.route('/admin', methods = ["GET","POST"])
@@ -169,9 +169,11 @@ def send_gift(gift_id):
     if request.method == "GET":
         if user_gift is not None:
             return render_template('send_gift.html', user_gift = user_gift)
+
+@app.route('/admingift', methods = ["GET", "POST"])
+def admingift():
+    if request.method == "GET":
+        return render_template('admingift.html',gifts = Gift.objects())
+
 if __name__ == '__main__':
   app.run(debug=True)
-
-@app.route('/admgift')
-def admingift():
-    return render_template('admingift.html')

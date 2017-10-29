@@ -7,17 +7,23 @@
       <tr>
         <th>#</th>
         <th>GIFT</th>
-        <th>CONTENT'S USER</th>
-        <th>EMAIL</th>
+        <th>NAME</th>
+        <th>EDIT</th>
       </tr>
     </thead>
     <tbody>
+      {% for gift in gifts%}
       <tr>
-        <td>1</td>
-        <td>100% TECHKIDS</td>
-        <td>QUẨY LÊN</td>
-        <td>nguyenlamhai89@gmail.com</td>
+        <td>{{loop.index}}</td>
+        <td><a href="{{gift.gift}}">Picture</a></td>
+        <td>{{gift.gift_name}}</td>
+        <td>
+            <a href="">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </a>
+        </td>
       </tr>
+      {% endfor %}
     </tbody>
   </table>
 </div>

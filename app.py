@@ -115,3 +115,7 @@ def edit_stress(question_id):
 
 if __name__ == '__main__':
   app.run(debug=True)
+
+@app.route('/admgift')
+def admingift():
+    return render_template('admingift.html')

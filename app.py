@@ -68,16 +68,16 @@ def index():
             point += 1
         if point == 6:
             user_gift = Gift.objects()[1]
-            gift_idd = str(user_gift.id)
-            return redirect('/send_gift/<gift_idd>')
+            gift_id = str(user_gift.id)
+            return redirect('/send_gift/<gift_id>')
         elif point == 7:
             user_gift = Gift.objects()[2]
-            gift_idd = str(user_gift.id)
-            return redirect('/send_gift/<gift_idd>')
+            gift_id = str(user_gift.id)
+            return redirect('/send_gift/<gift_id>')
         elif point == 8:
             user_gift = Gift.objects()[3]
-            gift_idd = str(user_gift.id)
-            return redirect('/send_gift/<gift_idd>')
+            gift_id = str(user_gift.id)
+            return redirect('/send_gift/<gift_id>')
 
 
 @app.route('/admin', methods = ["GET","POST"])

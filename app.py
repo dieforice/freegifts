@@ -78,14 +78,17 @@ def index():
             return redirect('/send_gift/'+gift_id)
         elif point == 8:
             z = random.randint(4,5)
+            user_gift = Gift.objects()[z]
             gift_id = str(user_gift.id)
             return redirect('/send_gift/'+gift_id)
         elif point == 9:
             z = random.randint(6)
+            user_gift = Gift.objects()[z]
             gift_id = str(user_gift.id)
             return redirect('/send_gift/'+gift_id)
         elif point == 10:
             z = random.randint(7)
+            user_gift = Gift.objects()[z]
             gift_id = str(user_gift.id)
             return redirect('/send_gift/'+gift_id)
 

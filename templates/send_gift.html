@@ -1,8 +1,23 @@
 {% extends "base.html" %}
 
 {% block page_content %}
-<div class="">
-  <img src="{{user_gift.gift}}" class = "img-fluid" alt="">
+<div class="container">
+  <h2 class = "text-center text-danger">CONGRATULATION!!!!!!!</h2>
+  <h4 class = "text-center">We would like to present you the following gift which is a:</h4>
+  <div class="">
+    <img src="{{user_gift.gift}}" class = "img-fluid" alt="">
+  </div>
+  <h2 class = "text-center text-danger">A {{user_gift.gift_name}}!!!!!!!</h2>
+
+  <form class="" action="" enctype="multipart/form-data" method="post">
+    <div class="form-control">
+      <label for="" class= "d-block">Please enter your email:</label>
+      <input type="submit" name="email" value="" class= "form-control">
+    </div>
+    <button type="submit" class = "form-control btn btn-danger" name="button">Send</button>
+  </form>
+
+
 </div>
 
 

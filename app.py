@@ -67,17 +67,27 @@ def index():
         if answer9 == vocab3.correct_word:
             point += 1
         if point == 6:
-            user_gift = Gift.objects()[1]
+            z = random.randint(0,1)
+            user_gift = Gift.objects()[z]
             gift_id = str(user_gift.id)
-            return redirect('/send_gift/<gift_id>')
+            return redirect('/send_gift/'+gift_id)
         elif point == 7:
-            user_gift = Gift.objects()[2]
+            z = random.randint(2,3)
+            user_gift = Gift.objects()[z]
             gift_id = str(user_gift.id)
-            return redirect('/send_gift/<gift_id>')
+            return redirect('/send_gift/'+gift_id)
         elif point == 8:
-            user_gift = Gift.objects()[3]
+            z = random.randint(4,5)
             gift_id = str(user_gift.id)
-            return redirect('/send_gift/<gift_id>')
+            return redirect('/send_gift/'+gift_id)
+        elif point == 9:
+            z = random.randint(6)
+            gift_id = str(user_gift.id)
+            return redirect('/send_gift/'+gift_id)
+        elif point == 10:
+            z = random.randint(7)
+            gift_id = str(user_gift.id)
+            return redirect('/send_gift/'+gift_id)
 
 
 @app.route('/admin', methods = ["GET","POST"])

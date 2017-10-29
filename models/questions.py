@@ -26,6 +26,6 @@ class Vocab(Document):
     wordD = StringField()
     correct_word = StringField()
 
-#task = Vocab(word = "convivial", wordA = "loudly", wordB = "stealthy", wordC = "sociable", wordD = "vintage", correct_word = "sociable")
+#task = Vocab(word = "reactor", wordA = "steel", wordB = "device", wordC = "rocket", wordD = "law", correct_word = "device")
 #task = Stress(answerA = "reference", answerB = "decision", answerC = "refusal", answerD = "important", correct_answer = "reference")
 #task.save()

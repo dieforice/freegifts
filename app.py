@@ -5,6 +5,7 @@ import random
 from mongoengine import *
 from models.questions import Question, Stress, Vocab
 from models.users import User
+from models.gifts import Gift
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "jroweror3PƯo32porwe342e3&^&^&#^@)(@(#or4343r"
 mlab.connect()
@@ -17,7 +18,7 @@ def index():
     c = random.randint(20,29)
     d = random.randint(30,39)
     if request.method == "GET":
-        return render_template('index.html', question=Question.objects()[a], question2=Question.objects()[b], question3=Question.objects()[c], question4=Question.objects()[d], stress=Stress.objects()[a],stress2 = Stress.objects()[b], vocab= Vocab.objects()[a], vocab2= Vocab.objects()[b])
+        return render_template('index.html', question=Question.objects()[a], question2=Question.objects()[b], question3=Question.objects()[c], question4=Question.objects()[d], stress=Stress.objects()[a],stress2 = Stress.objects()[b], vocab= Vocab.objects()[a], vocab2= Vocab.objects()[b], vocab3= Vocab.objects()[c] )
     elif request.method == "POST":
         form = request.form
         answer1 = form["answer1"]
@@ -28,6 +29,7 @@ def index():
         answer6 = form["answer6"]
         answer7 = form["answer7"]
         answer8 = form["answer8"]
+        answer9 = form["answer9"]
         id1 = form['id1']
         id2 = form['id2']
         id3 = form['id3']
@@ -36,6 +38,7 @@ def index():
         id6 = form['id6']
         id7 = form['id7']
         id8 = form['id8']
+        id9 = form['id9']
         question1 = Question.objects().with_id(id1)
         question2 = Question.objects().with_id(id2)
         question3 = Question.objects().with_id(id3)
@@ -44,6 +47,7 @@ def index():
         stress2 = Stress.objects().with_id(id6)
         vocab = Vocab.objects().with_id(id7)
         vocab2 = Vocab.objects().with_id(id8)
+        vocab3 = Vocab.objects().with_id(id9)
         if answer1 == question1.correct_answer:
             point += 1
         if answer2 == question2.correct_answer:
@@ -58,9 +62,24 @@ def index():
             point += 1
         if answer7 == vocab.correct_word:
             point += 1
-        if answer8 == vocab.correct_word:
+        if answer8 == vocab2.correct_word:
             point += 1
-        return (str(point))
+        if answer9 == vocab3.correct_word:
+            point += 1
+        if point == 6:
+            user_gift = Gift.objects()[1]
+            gift_id = user_gift.id
+            return (gift_id)
+        elif point == 7:
+            user_gift = Gift.objects()[2]
+            gift_id = user_gift.id
+            return (gift_id)
+        elif point == 8:
+            user_gift = Gift.objects()[3]
+            gift_id = user_gift.id
+            return (gift_id)
+
+
 @app.route('/admin', methods = ["GET","POST"])
 def admin():
     if request.method == "GET":
@@ -144,5 +163,11 @@ def edit_vocab(vocab_id):
         vocab_edit.update(set__wordA= wordA, set__wordB =wordB, set__wordC = wordC, set__wordD= wordD, set__correct_word = correct_word)
         return redirect('/admin')
 
+@app.route('/send_gift/<gift_id>', methods = ["GET", "POST"])
+def send_gift(gift_id):
+    user_gift = Gift.objects().with_id(gift_id)
+    if request.method == "GET":
+        if user_gift is not None:
+            return render_template('send_gift.html', user_gift = user_gift)
 if __name__ == '__main__':
   app.run(debug=True)

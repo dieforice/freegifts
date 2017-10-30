@@ -6,6 +6,7 @@ from mongoengine import *
 from models.questions import Question, Stress, Vocab
 from models.users import User
 from models.gifts import Gift
+from gmail import *
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "jroweror3PƯo32porwe342e3&^&^&#^@)(@(#or4343r"
 mlab.connect()
@@ -182,7 +183,14 @@ def send_gift(gift_id):
     if request.method == "GET":
         if user_gift is not None:
             return render_template('send_gift.html', user_gift = user_gift)
-
+    if request.method == "POST":
+        form = request.form
+        email = form["email"]
+        wish = form["wish"]
+        gmail = GMail('Test Gifts<dieforice@gmail.com>','mitdemTischkannman981vieledummeSachengemacht')
+        msg = Message(wish,to=email,text = user_gift.gift)
+        gmail.send(msg)
+        return redirect('/login')
 @app.route('/admingift', methods = ["GET", "POST"])
 def admingift():
     if request.method == "GET":

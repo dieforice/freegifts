@@ -187,7 +187,7 @@ def send_gift(gift_id):
         form = request.form
         email = form["email"]
         wish = form["wish"]
-        gmail = GMail('Test Gifts<dieforice@gmail.com>','mitdemTischkannman981vieledummeSachengemacht')
+        gmail = GMail('Cadeaux<dieforice@gmail.com>','mitdemTischkannman981vieledummeSachengemacht')
         msg = Message(wish,to=email,text = user_gift.gift)
         gmail.send(msg)
         return redirect('/login')

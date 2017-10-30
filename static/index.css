@@ -18,10 +18,10 @@
 
 footer{
   background-color: rgb(168,67,60);
-  height: 100px;
+  height: 75px;
 }
 
 #cpr{
-  max-width: 250px;
-  max-height: 250px;
+  max-width: 175px;
+  max-height: 175px;
 }

@@ -14,7 +14,7 @@
         <th>Answer B</th>
         <th>Answer C</th>
         <th>Answer D</th>
-        <th>Correct Answer</th>
+        <th class="table-primary">Correct Answer</th>
         <th>Edit</th>
       </tr>
     </thead>
@@ -27,7 +27,7 @@
         <td>{{ quest.answerB }}</td>
         <td>{{ quest.answerC }}</td>
         <td>{{ quest.answerD }}</td>
-        <td>{{ quest.correct_answer }}</td>
+        <td class="table-primary">{{ quest.correct_answer }}</td>
         <td>
             <a href="/edit_mp/{{quest.id}}">
               <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -50,7 +50,7 @@
         <th>Answer B</th>
         <th>Answer C</th>
         <th>Answer D</th>
-        <th>Correct Answer</th>
+        <th class="table-primary">Correct Answer</th>
         <th>Edit</th>
       </tr>
     </thead>
@@ -62,7 +62,7 @@
         <td>{{ str.answerB }}</td>
         <td>{{ str.answerC }}</td>
         <td>{{ str.answerD }}</td>
-        <td>{{ str.correct_answer }}</td>
+        <td class="table-primary">{{ str.correct_answer }}</td>
         <td>
             <a href="/edit_stress/{{str.id}}">
               <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -84,7 +84,7 @@
             <th>Word B</th>
             <th>Word C</th>
             <th>Word D</th>
-            <th>Correct Word</th>
+            <th class="table-primary">Correct Word</th>
             <th>Edit</th>
           </tr>
         </thead>
@@ -97,7 +97,7 @@
             <td>{{ voc.wordB }}</td>
             <td>{{ voc.wordC }}</td>
             <td>{{ voc.wordD }}</td>
-            <td>{{ voc.correct_word }}</td>
+            <td class="table-primary">{{ voc.correct_word }}</td>
             <td>
                 <a href="/edit_vocab/{{voc.id}}">
                   <i class="fa fa-pencil" aria-hidden="true"></i>

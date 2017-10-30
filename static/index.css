@@ -1,7 +1,7 @@
 #testgift{
-  background-color: red;
-  font-family: 'Indie Flower', cursive;
-  font-size: 120px;
+  background-image: url("https://i.imgur.com/wj2DmXF.jpg");
+  background-size:100% 100%;
+  height: 760px;
 }
 
 .body {

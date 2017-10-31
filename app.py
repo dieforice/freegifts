@@ -18,8 +18,9 @@ def index():
     b = random.randint(10,19)
     c = random.randint(20,29)
     d = random.randint(30,39)
+    e = random.randint(40,49)
     if request.method == "GET":
-        return render_template('index.html', question=Question.objects()[a], question2=Question.objects()[b], question3=Question.objects()[c], question4=Question.objects()[d], stress=Stress.objects()[a],stress2 = Stress.objects()[b], vocab= Vocab.objects()[a], vocab2= Vocab.objects()[b], vocab3= Vocab.objects()[c] )
+        return render_template('index.html', question=Question.objects()[a], question2=Question.objects()[b], question3=Question.objects()[c], question4=Question.objects()[d],question5 =Question.objects()[e], stress=Stress.objects()[a],stress2 = Stress.objects()[b], vocab= Vocab.objects()[a], vocab2= Vocab.objects()[b], vocab3= Vocab.objects()[c] )
     elif request.method == "POST":
         form = request.form
         answer1 = form["answer1"]
@@ -31,6 +32,7 @@ def index():
         answer7 = form["answer7"]
         answer8 = form["answer8"]
         answer9 = form["answer9"]
+        answer10 = form["answer10"]
         id1 = form['id1']
         id2 = form['id2']
         id3 = form['id3']
@@ -40,10 +42,12 @@ def index():
         id7 = form['id7']
         id8 = form['id8']
         id9 = form['id9']
+        id10 = form['id10']
         question1 = Question.objects().with_id(id1)
         question2 = Question.objects().with_id(id2)
         question3 = Question.objects().with_id(id3)
         question4 = Question.objects().with_id(id4)
+        question5 = Question.objects().with_id(id10)
         stress1 = Stress.objects().with_id(id5)
         stress2 = Stress.objects().with_id(id6)
         vocab = Vocab.objects().with_id(id7)
@@ -67,6 +71,10 @@ def index():
             point += 1
         if answer9 == vocab3.correct_word:
             point += 1
+        if answer10 == question5.correct_answer:
+            point += 1
+        if point < 6:
+            return render_template('no_gift.html')
         if point == 6:
             z = random.randint(0,1)
             user_gift = Gift.objects()[z]
@@ -83,13 +91,11 @@ def index():
             gift_id = str(user_gift.id)
             return redirect('/send_gift/'+gift_id)
         elif point == 9:
-            z = random.randint(6)
-            user_gift = Gift.objects()[z]
+            user_gift = Gift.objects()[6]
             gift_id = str(user_gift.id)
             return redirect('/send_gift/'+gift_id)
         elif point == 10:
-            z = random.randint(7)
-            user_gift = Gift.objects()[z]
+            user_gift = Gift.objects()[7]
             gift_id = str(user_gift.id)
             return redirect('/send_gift/'+gift_id)
 

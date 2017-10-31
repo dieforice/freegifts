@@ -120,6 +120,33 @@
           </table>
         </div>
 
+        <div class="container">
+          <table class="table table-inverse">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>GIFT</th>
+                <th>NAME</th>
+                <th>EDIT</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for gift in gifts%}
+              <tr>
+                <td>{{loop.index}}</td>
+                <td><a href="{{gift.gift}}">Picture</a></td>
+                <td>{{gift.gift_name}}</td>
+                <td>
+                    <a href="">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
   <h6 class="float-right text-white"> Copyright (c) Cadeaux</h6>
   </body>
 </html>

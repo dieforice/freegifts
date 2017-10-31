@@ -106,7 +106,7 @@ def admin():
         if "admin" not in session:
             return abort(403)
         else:
-            return render_template('admin.html', questions=Question.objects(), stress = Stress.objects(), vocab = Vocab.objects())
+            return render_template('admin.html', questions=Question.objects(), stress = Stress.objects(), vocab = Vocab.objects(), gifts = Gift.objects())
 
 @app.route('/login', methods = ["GET", "POST"])
 def login():

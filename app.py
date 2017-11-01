@@ -175,7 +175,7 @@ def edit_vocab(vocab_id):
             return render_template('edit_vocab.html', vocab_edit = vocab_edit)
     elif request.method =="POST":
         form = request.form
-        word = form["question"]
+        word = form["word"]
         wordA = form["wordA"]
         wordB = form["wordB"]
         wordC = form["wordC"]

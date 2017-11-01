@@ -28,4 +28,5 @@ mongoengine
 # ----------------------
 youtube-dl
 
-faker
+faker 
+gmail

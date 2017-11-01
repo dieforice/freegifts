@@ -74,30 +74,30 @@ def index():
         if answer10.upper() == question5.correct_answer:
             point += 1
         if point < 6:
-            return render_template('no_gift.html')
+            return render_template('no_gift.html', point = point)
         if point == 6:
             z = random.randint(0,1)
             user_gift = Gift.objects()[z]
-            gift_id = str(user_gift.id)
-            return redirect('/send_gift/'+gift_id)
+            #gift_id = str(user_gift.id)
+            return render_template('send_gift.html', user_gift = user_gift, point= point)
         elif point == 7:
             z = random.randint(2,3)
             user_gift = Gift.objects()[z]
-            gift_id = str(user_gift.id)
-            return redirect('/send_gift/'+gift_id)
+            #gift_id = str(user_gift.id)
+            return render_template('send_gift.html', user_gift = user_gift, point= point)
         elif point == 8:
             z = random.randint(4,5)
             user_gift = Gift.objects()[z]
-            gift_id = str(user_gift.id)
-            return redirect('/send_gift/'+gift_id)
+            #gift_id = str(user_gift.id)
+            return render_template('send_gift.html', user_gift = user_gift, point= point)
         elif point == 9:
             user_gift = Gift.objects()[6]
-            gift_id = str(user_gift.id)
-            return redirect('/send_gift/'+gift_id)
+            #gift_id = str(user_gift.id)
+            return render_template('send_gift.html', user_gift = user_gift, point= point)
         elif point == 10:
             user_gift = Gift.objects()[7]
-            gift_id = str(user_gift.id)
-            return redirect('/send_gift/'+gift_id)
+            #gift_id = str(user_gift.id)
+            return render_template('send_gift.html', user_gift = user_gift, point= point)
 
 
 @app.route('/admin', methods = ["GET","POST"])
@@ -126,7 +126,7 @@ def login():
             return render_template('login.html')
         else:
             session['admin'] = True
-            return redirect('admin')
+            return redirect('/admin')
     # if username == "admin" and password == "admin":
     #     session['admin'] = True
     #     return redirect('/admin')
@@ -197,7 +197,7 @@ def send_gift(gift_id):
         gmail = GMail('Cadeaux<dieforice@gmail.com>','mitdemTischkannman981vieledummeSachengemacht')
         msg = Message(wish,to=email,text = user_gift.gift)
         gmail.send(msg)
-        return redirect('/login')
+        return render_template('gift_sent.html')
 @app.route('/admingift', methods = ["GET", "POST"])
 def admingift():
     if request.method == "GET":

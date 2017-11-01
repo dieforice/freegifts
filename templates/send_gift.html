@@ -2,7 +2,7 @@
 
 {% block page_content %}
 <div class="container">
-  <h2 class = "text-center text-danger m-5">CONGRATULATIONS!!!!!!!</h2>
+  <h2 class = "text-center text-danger m-5">CONGRATULATIONS!!!!!!!, you had {{point}} correct answers.</h2>
   <h4 class = "text-center m-3">We would like to present you the following gift which is a:</h4>
   <form class="" action="/send_gift/{{user_gift.id}}" enctype="multipart/form-data" method="post">
     <div class="form-control">
@@ -17,7 +17,6 @@
     </div>
     <button type="submit" class = "form-control btn btn-danger" name="button">Send</button>
   </form>
-
 
 </div>
 

@@ -53,25 +53,25 @@ def index():
         vocab = Vocab.objects().with_id(id7)
         vocab2 = Vocab.objects().with_id(id8)
         vocab3 = Vocab.objects().with_id(id9)
-        if answer1 == question1.correct_answer:
+        if answer1.upper() == question1.correct_answer:
             point += 1
-        if answer2 == question2.correct_answer:
+        if answer2.upper() == question2.correct_answer:
             point += 1
-        if answer3 == question3.correct_answer:
+        if answer3.upper() == question3.correct_answer:
             point += 1
-        if answer4 == question4.correct_answer:
+        if answer4.upper() == question4.correct_answer:
             point += 1
-        if answer5 == stress1.correct_answer:
+        if answer5.upper() == stress1.correct_answer:
             point += 1
-        if answer6 == stress2.correct_answer:
+        if answer6.upper() == stress2.correct_answer:
             point += 1
-        if answer7 == vocab.correct_word:
+        if answer7.upper() == vocab.correct_word:
             point += 1
-        if answer8 == vocab2.correct_word:
+        if answer8.upper() == vocab2.correct_word:
             point += 1
-        if answer9 == vocab3.correct_word:
+        if answer9.upper() == vocab3.correct_word:
             point += 1
-        if answer10 == question5.correct_answer:
+        if answer10.upper() == question5.correct_answer:
             point += 1
         if point < 6:
             return render_template('no_gift.html')
@@ -175,12 +175,13 @@ def edit_vocab(vocab_id):
             return render_template('edit_vocab.html', vocab_edit = vocab_edit)
     elif request.method =="POST":
         form = request.form
+        word = form["question"]
         wordA = form["wordA"]
         wordB = form["wordB"]
         wordC = form["wordC"]
         wordD = form["wordD"]
         correct_word = form["correct_word"]
-        vocab_edit.update(set__wordA= wordA, set__wordB =wordB, set__wordC = wordC, set__wordD= wordD, set__correct_word = correct_word)
+        vocab_edit.update(set__word = word, set__wordA= wordA, set__wordB =wordB, set__wordC = wordC, set__wordD= wordD, set__correct_word = correct_word)
         return redirect('/admin')
 
 @app.route('/send_gift/<gift_id>', methods = ["GET", "POST"])

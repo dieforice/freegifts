@@ -2,12 +2,10 @@
 
 {% block page_content %}
 <div class="container">
-  <h2 class = "text-center text-danger">CONGRATULATIONS!!!!!!!</h2>
-  <h4 class = "text-center">We would like to present you the following gift which is a:</h4>
+  <h2 class = "text-center text-danger m-5">CONGRATULATIONS!!!!!!!</h2>
+  <h4 class = "text-center m-3">We would like to present you the following gift which is a:</h4>
   <form class="" action="/send_gift/{{user_gift.id}}" enctype="multipart/form-data" method="post">
     <div class="form-control">
-      <label for="" class= "d-block">Please enter your email:</label>
-      <input type="text" name="email" value="" class= "form-control">
       <div class="text-center">
         <img src="{{user_gift.gift}}" align = "middle" class = "hellobaby img-fluid" alt="">
       </div>

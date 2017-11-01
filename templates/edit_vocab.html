@@ -5,7 +5,7 @@
   <form class="" action="/edit_vocab/{{vocab_edit.id}}"  enctype="multipart/form-data" method="post">
     <div class="form-group">
       <label for="" class= "d-block">Word</label>
-      <textarea name="question" rows="5" cols="60" class = "form-control">{{vocab_edit.question}}</textarea>
+      <input type="text" name="word" value="{{vocab_edit.question}}" class = "form-control">
     </div>
     <div class="form-group">
       <label for="" class= "d-block">Word A</label>

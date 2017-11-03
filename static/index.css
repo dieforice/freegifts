@@ -1,7 +1,7 @@
 #testgift{
   background-image: url("https://i.imgur.com/wj2DmXF.jpg");
   background-size:100% 100%;
-  height: 750px;
+  height: 700px;
   box-sizing: border-box;
 }
 
@@ -29,23 +29,26 @@ footer{
 
 .btn{
   border-radius: 8px;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 #ans{
   color: red;
 }
 
+
 #check{
   width: 100%;
-  height: 50px;
-  display: inline-block;
+  height: 100%;
   border-radius: 4px;
   border: none;
   text-align: center;
-  font-size: 28px;
+  font-size: 27px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+  background-color: rgb(168,67,60);
 }
 
 
@@ -79,4 +82,32 @@ footer{
   height: 37px;
   border-radius: 50%;
   background-color: rgb(168,67,60);
+}
+
+#htp{
+  background-color:  rgb(168,67,60);
+  font-size: 28px;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.topnav{
+  overflow: hidden;
+  background-color: rgb(168,67,60);
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: rgb(232, 190, 46);
+  color: white;
 }

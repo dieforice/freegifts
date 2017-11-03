@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
 {% block page_content %}
-<div class="body container">
+<div class="body container" style="margin-top: 100px">
   <div class="row">
     <div class="col-lg-3">
       <div class="card mb-2">
+        <div id="htp" class="card-header">
+          <h3 class="text-center text-white">PRESENTS</h3>
+        </div>
         <div class="card-body">
-          <h3 id="pres" class="text-center">Presents</h3>
           <img src="https://docs.google.com/uc?id=0ByQk_BXnNoNfWndaUS1SblpHNDQ" class="img-fluid" alt="">
           <img src="https://docs.google.com/uc?id=0ByQk_BXnNoNfdjZWTlJJX2JRQTA" class="img-fluid" alt="">
 
@@ -16,8 +18,10 @@
     <div class="col-lg-6 col-sm-12">
       <form class="" action="/" method="post">
         <div class="card mb-2">
+          <div id="htp" class="card-header">
+            <h3 class = "text-center text-white" id="htp">QUESTIONS</h3>
+          </div>
           <div class="card-body" >
-            <h3 class = "text-center" id="quest">QUESTIONS</h3>
             <h3 class = "lead text-center m-2 text-danger">Multiple Choices</h3>
             <div class="mb-2">
               <h6 class="text-danger">Question 1:</h6>
@@ -106,7 +110,9 @@
               <input class="d-none" type="text" name="id10" value="{{ question5.id }}">
             </div>
             <br>
-            <button id="check" type="submit" name="button" style="vertical-align:middle" class="btn btn-danger float-right"><span>Check</span></button>
+          </div>
+          <div  class="card-footer">
+            <button id="check" type="submit" name="button" class="btn text-white"><span>Check</span></button>
           </div>
         </div>
       </form>
@@ -114,8 +120,10 @@
 
     <div class="col-lg-3">
       <div class="card mb-2">
+        <div id="htp" class="card-header">
+          <h3 id="htp" class="text-center text-white">HOW TO PLAY</h3>
+        </div>
         <div class="card-body">
-          <h3 id="htp" class="text-center">How to play</h3>
           <br>
           <h5 class="text-center">Welcome to Test Gifts</h5>
           <ul class="mr-1">

@@ -22,96 +22,98 @@
             <h3 class = "text-center text-white" id="htp">QUESTIONS</h3>
           </div>
           <div class="card-body" >
-            <h3 class = "lead text-center m-2 text-danger">Multiple Choices</h3>
+            <h3 class = "text-center m-2 text-danger" style="font-family: 'Kanit', sans-serif">Multiple Choices</h3>
             <div class="mb-2">
-              <h6 class="text-danger">Question 1:</h6>
-              <h6>{{question.question}}</h6>
-              <h6>A. {{question.answerA}} <br>B. {{question.answerB}} <br>C. {{question.answerC}} <br>D. {{question.answerD}}</h6>
-              <label id="ans" for="">Answer</label>
+              <h5 class="text-danger" style="font-family: 'Bitter', serif">Question 1:</h5>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif">{{question.question}}</h5>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{question.answerA}} <br>B. {{question.answerB}} <br>C. {{question.answerC}} <br>D. {{question.answerD}}</h5>
+              <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
               <input type="text" name="answer1" value="">
               <input class="d-none" type="text" name="id1" value="{{ question.id }}">
             </div>
             <br>
             <div class="mb-2">
-              <h6 class="text-danger">Question 2:</h6>
-              <h6>{{question2.question}}</h6>
-              <h6>A. {{question2.answerA}} <br>B. {{question2.answerB}} <br>C. {{question2.answerC}} <br>D. {{question2.answerD}}</h6>
-              <label id="ans" for="">Answer</label>
+              <h5 class="text-danger" style="font-family: 'Bitter', serif">Question 2:</h5>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif">{{question2.question}}</h5>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{question2.answerA}} <br>B. {{question2.answerB}} <br>C. {{question2.answerC}} <br>D. {{question2.answerD}}</h5>
+              <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
               <input type="text" name="answer2" value="">
               <input class="d-none" type="text" name="id2" value="{{ question2.id }}">
             </div>
             <br>
             <div class="mb-2">
-              <h6 class="text-danger">Question 3:</h6>
-              <h6> {{question3.question}}</h6>
-              <h6>A. {{question3.answerA}} <br>B. {{question3.answerB}} <br>C. {{question3.answerC}} <br>D. {{question3.answerD}}</h6>
-              <label id="ans" for="">Answer</label>
+              <h5 class="text-danger" style="font-family: 'Bitter', serif">Question 3:</h5>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif"> {{question3.question}}</h5>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{question3.answerA}} <br>B. {{question3.answerB}} <br>C. {{question3.answerC}} <br>D. {{question3.answerD}}</h5>
+              <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
               <input type="text" name="answer3" value="">
               <input class="d-none" type="text" name="id3" value="{{ question3.id }}">
             </div>
             <br>
             <div class="mb-2">
-              <h6 class="text-danger">Question 4:</h6>
-              <h6> {{question4.question}}</h6>
-              <h6>A. {{question4.answerA}} <br>B. {{question4.answerB}} <br>C. {{question4.answerC}} <br>D. {{question4.answerD}}</h6>
-              <label id="ans" for="">Answer</label>
+              <h5 class="text-danger" style="font-family: 'Bitter', serif">Question 4:</h5>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif" > {{question4.question}}</h5>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{question4.answerA}} <br>B. {{question4.answerB}} <br>C. {{question4.answerC}} <br>D. {{question4.answerD}}</h5>
+              <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
               <input type="text" name="answer4" value="">
               <input class="d-none" type="text" name="id4" value="{{ question4.id }}">
             </div>
             <br>
-            <h3 class = "lead text-center mb-2 text-danger">Stress</h3>
+            <h3 class = "text-center mb-2 text-danger" style="font-family: 'Kanit', sans-serif">Stress</h3>
             <div class="mb-2">
-              <h6>Choose the word that has main stress placed differently from the others:</h6>
-              <h6>A. {{stress.answerA}} <br>B. {{stress.answerB}} <br>C. {{stress.answerC}} <br>D. {{stress.answerD}}</h6>
-              <label id="ans" for="">Answer</label>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif" style="font-family: 'Bitter', serif">Choose the word that has main stress placed differently from the others:</h5>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{stress.answerA}} <br>B. {{stress.answerB}} <br>C. {{stress.answerC}} <br>D. {{stress.answerD}}</h6>
+              <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
               <input type="text" name="answer5" value="">
               <input class="d-none" type="text" name="id5" value="{{ stress.id }}">
             </div>
             <div class="mb-2">
-              <h6>Choose the word that has main stress placed differently from the others:</h6>
-              <h6>A. {{stress2.answerA}} <br>B. {{stress2.answerB}} <br>C. {{stress2.answerC}} <br>D. {{stress2.answerD}}</h6>
-              <label id="ans" for="">Answer</label>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif" style="font-family: 'Bitter', serif">Choose the word that has main stress placed differently from the others:</h5>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{stress2.answerA}} <br>B. {{stress2.answerB}} <br>C. {{stress2.answerC}} <br>D. {{stress2.answerD}}</h5>
+              <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
               <input type="text" name="answer6" value="">
               <input class="d-none" type="text" name="id6" value="{{ stress2.id }}">
             </div>
             <br>
-            <h3 class = "lead text-center text-white">Vocabulary</h3>
+            <h3 class = "text-center mb-2 text-danger" style="font-family: 'Kanit', sans-serif">Vocabulary</h3>
             <div class="mb-2">
-              <h6> What does {{vocab.word}} mean?</h6>
-              <h6>A. {{vocab.wordA}} <br>B. {{vocab.wordB}} <br>C. {{vocab.wordC}} <br>D. {{vocab.wordD}}</h6>
-              <label id="ans" for="">Answer</label>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif" style="font-family: 'Bitter', serif"> What does {{vocab.word}} mean?</h5>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{vocab.wordA}} <br>B. {{vocab.wordB}} <br>C. {{vocab.wordC}} <br>D. {{vocab.wordD}}</h5>
+              <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
               <input type="text" name="answer7" value="">
               <input class="d-none" type="text" name="id7" value="{{ vocab.id }}">
             </div>
             <br>
             <div class="mb-2">
-              <h6> What does {{vocab2.word}} mean?</h6>
-              <h6>A. {{vocab2.wordA}} <br>B. {{vocab2.wordB}} <br>C. {{vocab2.wordC}} <br>D. {{vocab2.wordD}}</h6>
-              <label id="ans" for="">Answer</label>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif" style="font-family: 'Bitter', serif"> What does {{vocab2.word}} mean?</h5>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{vocab2.wordA}} <br>B. {{vocab2.wordB}} <br>C. {{vocab2.wordC}} <br>D. {{vocab2.wordD}}</h5>
+              <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
               <input type="text" name="answer8" value="">
               <input class="d-none" type="text" name="id8" value="{{ vocab2.id }}">
             </div>
             <br>
             <div class="mb-2">
-              <h6> What does {{vocab3.word}} mean?</h6>
-              <h6>A. {{vocab3.wordA}} <br>B. {{vocab3.wordB}} <br>C. {{vocab3.wordC}} <br>D. {{vocab3.wordD}}</h6>
-              <label id="ans" for="">Answer</label>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif" style="font-family: 'Bitter', serif"> What does {{vocab3.word}} mean?</h5>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{vocab3.wordA}} <br>B. {{vocab3.wordB}} <br>C. {{vocab3.wordC}} <br>D. {{vocab3.wordD}}</h5>
+              <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
               <input type="text" name="answer9" value="">
               <input class="d-none" type="text" name="id9" value="{{ vocab3.id }}">
             </div>
             <br>
-            <h3 class = "lead text-center m-2 text-danger">Math</h3>
+            <h3 class = "text-center m-2 text-danger" style="font-family: 'Kanit', sans-serif">Math</h3>
             <div class="mb-2">
-              <h6 class="text-danger">Question 10:</h6>
-              <h6>{{question5.question}}</h6>
-              <h6>A. {{question5.answerA}} <br>B. {{question5.answerB}} <br>C. {{question5.answerC}} <br>D. {{question5.answerD}}</h6>
-              <label id="ans" for="">Answer</label>
+              <h5 class="text-danger" style="font-family: 'Bitter', serif">Question 10:</h5>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif" >{{question5.question}}</h5>
+              <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{question5.answerA}} <br>B. {{question5.answerB}} <br>C. {{question5.answerC}} <br>D. {{question5.answerD}}</h5>
+              <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
               <input type="text" name="answer10" value="">
               <input class="d-none" type="text" name="id10" value="{{ question5.id }}">
             </div>
             <br>
           </div>
-            <button id="check" type="submit" name="button" class="btn text-white"><span>Check</span></button>
+          <div  class="card-footer" style="background-color: rgb(168,67,60)">
+            <button id="check" type="submit" name="button" class="btn text-white" ><span>Check</span></button>
+          </div>
         </div>
       </form>
     </div>

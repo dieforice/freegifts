@@ -21,7 +21,6 @@
   max-height: 75%;
 }
 
-<<<<<<< HEAD
 * {
   box-sizing: border-box;
 }
@@ -35,7 +34,7 @@
   text-align: center;
   color: #FFF;
   font-size: 3em;
-=======
+
 footer{
   background-color: rgb(168,67,60);
   height: 45px;
@@ -131,5 +130,4 @@ footer{
   max-height: 52.8px;
   max-width: 100px;
   margin: 0 auto;
->>>>>>> 9cf5df787eb66e4d8b8c6542095a56eeeb95c3bc
 }

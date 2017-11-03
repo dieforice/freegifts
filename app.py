@@ -95,15 +95,9 @@ def index():
             #gift_id = str(user_gift.id)
             return render_template('send_gift.html', user_gift = user_gift, point= point)
         elif point == 10:
-
-            z = random.randint(7)
-            user_gift = Gift.objects()[z]
-            gift_id = str(user_gift.id)
-        return redirect('/send_gift/'+gift_id)
-
-        user_gift = Gift.objects()[7]
+            user_gift = Gift.objects()[7]
             #gift_id = str(user_gift.id)
-        return render_template('send_gift.html', user_gift = user_gift, point= point)
+            return render_template('send_gift.html', user_gift = user_gift, point= point)
 
 
 @app.route('/admin', methods = ["GET","POST"])

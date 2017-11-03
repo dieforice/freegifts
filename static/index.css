@@ -5,10 +5,6 @@
   box-sizing: border-box;
 }
 
-
-
-
-
 .body {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -21,20 +17,6 @@
   max-height: 75%;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-.item {
-  width: 200px;
-  height: 200px;
-  margin: 50px auto;
-  padding-top: 75px;
-  background: #ccc;
-  text-align: center;
-  color: #FFF;
-  font-size: 3em;
-
 footer{
   background-color: rgb(168,67,60);
   height: 45px;
@@ -43,6 +25,11 @@ footer{
 #cpr{
   max-width: 175px;
   max-height: 175px;
+}
+
+.brd{
+  border-style: solid;
+  border-color: rgb(168,67,60);
 }
 
 .btn{
@@ -124,6 +111,11 @@ footer{
 .topnav a:hover {
   background-color: rgb(232, 190, 46);
   color: white;
+}
+
+.spons{
+  background-color:  rgb(168,67,60);
+  color: rgb(232, 190, 46);
 }
 
 .logomenu{

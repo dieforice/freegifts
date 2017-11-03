@@ -27,5 +27,5 @@ class Vocab(Document):
     correct_word = StringField()
 
 #task = Vocab(word = "reactor", wordA = "steel", wordB = "device", wordC = "rocket", wordD = "law", correct_word = "device")
-#task = Stress(answerA = "reference", answerB = "decision", answerC = "refusal", answerD = "important", correct_answer = "reference")
+#task = Question(question = "If x^1/2 = x/10 and x > 0, what is the value of x?", answerA = "10", answerB = "1000", answerC = "100", answerD = "1", correct_answer = "100")
 #task.save()

@@ -27,6 +27,11 @@ footer{
   max-height: 175px;
 }
 
+.brd{
+  border-style: solid;
+  border-color: rgb(168,67,60);
+}
+
 .btn{
   border-radius: 8px;
   min-width: 100%;
@@ -106,6 +111,11 @@ footer{
 .topnav a:hover {
   background-color: rgb(232, 190, 46);
   color: white;
+}
+
+.spons{
+  background-color:  rgb(168,67,60);
+  color: rgb(232, 190, 46);
 }
 
 .logomenu{

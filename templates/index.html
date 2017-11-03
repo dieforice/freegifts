@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block page_content %}
+<<<<<<< HEAD
+=======
 <div class="body container" style="margin-top: 100px">
   <div class="row">
     <div class="col-lg-3">
@@ -11,13 +13,29 @@
         <div class="card-body">
           <img src="https://docs.google.com/uc?id=0ByQk_BXnNoNfWndaUS1SblpHNDQ" class="img-fluid" alt="">
           <img src="https://docs.google.com/uc?id=0ByQk_BXnNoNfdjZWTlJJX2JRQTA" class="img-fluid" alt="">
+>>>>>>> 9cf5df787eb66e4d8b8c6542095a56eeeb95c3bc
 
-        </div>
-      </div>
-  </div>
-    <div class="col-lg-6 col-sm-12">
-      <form class="" action="/" method="post">
+
+
+<section id="section02">
+
+  <div class="body container">
+    <div class="clearfix">
+        <a href="/login">
+          <button class="btn btn-danger float-right text-white" type="submit" name="button">Sign In</button>
+        </a>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-3">
         <div class="card mb-2">
+<<<<<<< HEAD
+          <div class="card-body">
+            <h3 id="pres">Presents</h3>
+            <img src="https://docs.google.com/uc?id=0ByQk_BXnNoNfWndaUS1SblpHNDQ" class="img-fluid" alt="">
+            <img src="https://docs.google.com/uc?id=0ByQk_BXnNoNfdjZWTlJJX2JRQTA" class="img-fluid" alt="">
+
+=======
           <div id="htp" class="card-header">
             <h3 class = "text-center text-white" id="htp">QUESTIONS</h3>
           </div>
@@ -113,11 +131,108 @@
           </div>
           <div  class="card-footer" style="background-color: rgb(168,67,60)">
             <button id="check" type="submit" name="button" class="btn text-white" ><span>Check</span></button>
+>>>>>>> 9cf5df787eb66e4d8b8c6542095a56eeeb95c3bc
           </div>
         </div>
-      </form>
     </div>
+      <div class="col-lg-6 col-sm-12">
+        <form class="" action="/" method="post">
+          <div class="card mb-2">
+            <div class="card-body">
+              <h3 class = "text-center" id="quest">QUESTIONS</h3>
+              <h3 class = "lead text-center m-2 text-danger">Multiple Choices</h3>
+              <div class="mb-2">
+                <h6 class="text-danger">Question 1:</h6>
+                <h6>{{question.question}}</h6>
+                <h6>A. {{question.answerA}} <br>B. {{question.answerB}} <br>C. {{question.answerC}} <br>D. {{question.answerD}}</h6>
+                <label for="">Answer</label>
+                <input type="text" name="answer1" value="">
+                <input class="d-none" type="text" name="id1" value="{{ question.id }}">
+              </div>
+              <br>
+              <div class="mb-2">
+                <h6 class="text-danger">Question 2:</h6>
+                <h6>{{question2.question}}</h6>
+                <h6>A. {{question2.answerA}} <br>B. {{question2.answerB}} <br>C. {{question2.answerC}} <br>D. {{question2.answerD}}</h6>
+                <label for="">Answer</label>
+                <input type="text" name="answer2" value="">
+                <input class="d-none" type="text" name="id2" value="{{ question2.id }}">
+              </div>
+              <br>
+              <div class="mb-2">
+                <h6 class="text-danger">Question 3:</h6>
+                <h6> {{question3.question}}</h6>
+                <h6>A. {{question3.answerA}} <br>B. {{question3.answerB}} <br>C. {{question3.answerC}} <br>D. {{question3.answerD}}</h6>
+                <label for="">Answer</label>
+                <input type="text" name="answer3" value="">
+                <input class="d-none" type="text" name="id3" value="{{ question3.id }}">
+              </div>
+              <br>
+              <div class="mb-2">
+                <h6 class="text-danger">Question 4:</h6>
+                <h6> {{question4.question}}</h6>
+                <h6>A. {{question4.answerA}} <br>B. {{question4.answerB}} <br>C. {{question4.answerC}} <br>D. {{question4.answerD}}</h6>
+                <label for="">Answer</label>
+                <input type="text" name="answer4" value="">
+                <input class="d-none" type="text" name="id4" value="{{ question4.id }}">
+              </div>
+              <br>
+              <h3 class = "lead text-center mb-2 text-danger">Stress</h3>
+              <div class="mb-2">
+                <h6>A. {{stress.answerA}} <br>B. {{stress.answerB}} <br>C. {{stress.answerC}} <br>D. {{stress.answerD}}</h6>
+                <label for="">Answer</label>
+                <input type="text" name="answer5" value="">
+                <input class="d-none" type="text" name="id5" value="{{ stress.id }}">
+              </div>
+              <div class="mb-2">
+                <h6>A. {{stress2.answerA}} <br>B. {{stress2.answerB}} <br>C. {{stress2.answerC}} <br>D. {{stress2.answerD}}</h6>
+                <label for="">Answer</label>
+                <input type="text" name="answer6" value="">
+                <input class="d-none" type="text" name="id6" value="{{ stress2.id }}">
+              </div>
+              <br>
+              <h3 class = "lead text-center mb-2 text-danger">Vocabulary</h3>
+              <div class="mb-2">
+                <h6> What does {{vocab.word}} mean?</h6>
+                <h6>A. {{vocab.wordA}} <br>B. {{vocab.wordB}} <br>C. {{vocab.wordC}} <br>D. {{vocab.wordD}}</h6>
+                <label for="">Answer</label>
+                <input type="text" name="answer7" value="">
+                <input class="d-none" type="text" name="id7" value="{{ vocab.id }}">
+              </div>
+              <br>
+              <div class="mb-2">
+                <h6> What does {{vocab2.word}} mean?</h6>
+                <h6>A. {{vocab2.wordA}} <br>B. {{vocab2.wordB}} <br>C. {{vocab2.wordC}} <br>D. {{vocab2.wordD}}</h6>
+                <label for="">Answer</label>
+                <input type="text" name="answer8" value="">
+                <input class="d-none" type="text" name="id8" value="{{ vocab2.id }}">
+              </div>
+              <br>
+              <div class="mb-2">
+                <h6> What does {{vocab3.word}} mean?</h6>
+                <h6>A. {{vocab3.wordA}} <br>B. {{vocab3.wordB}} <br>C. {{vocab3.wordC}} <br>D. {{vocab3.wordD}}</h6>
+                <label for="">Answer</label>
+                <input type="text" name="answer9" value="">
+                <input class="d-none" type="text" name="id9" value="{{ vocab3.id }}">
+              </div>
+              <button type="submit" name="button" class="btn btn-danger float-right">Check</button>
+            </div>
+          </div>
+        </form>
+      </div>
 
+<<<<<<< HEAD
+      <div class="col-lg-3">
+        <div class="card mb-2">
+          <div class="card-body">
+            <h3 id="htp">How to play</h3>
+            <br>
+            <h5>Welcome to Test Gifts</h5>
+            <h6>-Answer the questions to receive the gifts</h6>
+            <h6>-Enter the word that you believe is the right answer!</h6>
+            <h6>If you get more than 5 correct answer, prize will be given</h6>
+          </div>
+=======
     <div class="col-lg-3">
       <div class="card mb-2">
         <div id="htp" class="card-header">
@@ -131,10 +246,15 @@
             <li>You only need to type A,B,C,D or a,b,c,d</li>
             <li class="text-danger">IF YOU GET MORE THAN 5 CORRECT ANSWERS, PRIZE WILL BE GIVEN</li>
           </ul>
+>>>>>>> 9cf5df787eb66e4d8b8c6542095a56eeeb95c3bc
         </div>
       </div>
     </div>
+
   </div>
+<<<<<<< HEAD
+</section>
+=======
   <div class="container">
     <h3 class="text-danger" style="text-align: center">Sponsors</h3>
     <div class="row m-1">
@@ -165,8 +285,8 @@
 
 
   </div>
+>>>>>>> 9cf5df787eb66e4d8b8c6542095a56eeeb95c3bc
 
-</div>
 
 
 

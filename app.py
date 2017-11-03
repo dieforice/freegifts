@@ -91,7 +91,7 @@ def index():
             z = random.randint(7)
             user_gift = Gift.objects()[z]
             gift_id = str(user_gift.id)
-            return redirect('/send_gift/'+gift_id)
+        return redirect('/send_gift/'+gift_id)
 
 
 @app.route('/admin', methods = ["GET","POST"])

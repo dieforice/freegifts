@@ -1,10 +1,80 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Free Gifts</title>
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Kanit|Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
-{% block page_content %}
-<div class="container m-5">
-  <h2 class = "text-center text-danger">Unfortunately, your score is {{point}} and it's too low to receive a prize :(</h2>
-  <h4 class = "text-center">PLease try again...</h4>
-  <button id="check" type="button" class = "btn btn-danger m-5" name="button"><a class="text-white" href="/"><span>Take the test again</span></a></button>
-</div>
+  </head>
+  <div class="topnav">
 
-{% endblock %}
+    <div class="row">
+      <a href="/" class="ml-3"><i class="fa fa-home" aria-hidden="true"></i></a>
+      <a href="/math">MATH</a>
+      <a href="/about">ABOUT</a>
+    </div>
+
+
+  </div>
+  <body class="">
+    <img src="https://i.imgur.com/LNeuV09.jpg" alt="" class="img-fluid d-none d-sm-block">
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-lg-2 ">
+
+        </div>
+        <div class="container m-5 col-lg-8 col-sm-12 ">
+          <div class="nogift">
+            <h2 class = "text-center text-danger" style="font-family: 'Kanit', sans-serif">Unfortunately, your score is {{point}} and it's too low to receive a prize :(</h2>
+            <h4 class = "text-center" style="font-family: 'Bitter', serif">Please try again...</h4>
+            <br>
+            <button id="check" type="button" class = "btn btn-danger" name="button"><a class="text-white" href="/"><span>Take the test again</span></a></button>
+          </div>
+
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+  <footer class=" d-none d-sm-block">
+    <div class="container py-3">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="row">
+            <a href="https://www.google.com/maps/place/161+Nguy%E1%BB%85n+Tu%C3%A2n,+Thanh+Xu%C3%A2n+Trung,+Thanh+Xu%C3%A2n,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam/@20.998828,105.8007371,17z/data=!3m1!4b1!4m5!3m4!1s0x3135acbd1f36e88d:0x3248abd1c09a4a95!8m2!3d20.998823!4d105.8029258" style="color: rgb(232, 190, 46)">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </a>
+            <h6 class="text-white mx-2">161 Nguyen Tuan - HANOI</h6>
+          </div>
+
+          <div class="row">
+            <i class="fa fa-phone" aria-hidden="true" style="color: rgb(232, 190, 46)"></i>
+            <h6 class="text-white mx-2">+84914932959</h6>
+
+          </div>
+
+          <div class="row">
+            <i class="fa fa-envelope-o" aria-hidden="true" style="color: rgb(232, 190, 46)"></i>
+            <h6 class="text-warning mx-2">nguyenlamhai89@gmail.com</h6>
+
+          </div>
+
+
+        </div>
+        <div class="col-lg-6">
+          <h3 id= "footer" class="text-white mr-4 mt-2 float-right"> Copyright (c) Cadeaux</h3>
+        </div>
+      </div>
+
+
+    </div>
+  </footer>
+</html>

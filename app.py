@@ -19,8 +19,12 @@ def index():
     c = random.randint(20,29)
     d = random.randint(30,39)
     e = random.randint(40,49)
+    f = random.randint(50,69)
+    g = random.randint(70,89)
+    h = random.randint(0,19)
+    j = random.randint(20,39)
     if request.method == "GET":
-        return render_template('index.html', question=Question.objects()[a], question2=Question.objects()[b], question3=Question.objects()[c], question4=Question.objects()[d],question5 =Question.objects()[e], stress=Stress.objects()[a],stress2 = Stress.objects()[b], vocab= Vocab.objects()[a], vocab2= Vocab.objects()[b], vocab3= Vocab.objects()[c] )
+        return render_template('index.html', question=Question.objects()[h], question2=Question.objects()[f], question3=Question.objects()[g], question4=Question.objects()[j],question5 =Question.objects()[e], stress=Stress.objects()[a],stress2 = Stress.objects()[b], vocab= Vocab.objects()[a], vocab2= Vocab.objects()[b], vocab3= Vocab.objects()[c] )
     elif request.method == "POST":
         form = request.form
         answer1 = form["answer1"]
@@ -202,10 +206,6 @@ def send_gift(gift_id):
 def admingift():
     if request.method == "GET":
         return render_template('admingift.html',gifts = Gift.objects())
-
-@app.route('/about')
-def about():
-    return render_template("about.html")
 
 if __name__ == '__main__':
   app.run(debug=True)

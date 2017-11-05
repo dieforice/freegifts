@@ -23,6 +23,11 @@ footer{
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+.name {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 #cpr{
   max-width: 175px;
   max-height: 175px;

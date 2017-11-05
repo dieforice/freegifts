@@ -123,3 +123,7 @@ footer{
   max-width: 100px;
   margin: 0 auto;
 }
+
+.bcg{
+  background-image: url("https://i.imgur.com/9YvqdHj.jpg");
+}

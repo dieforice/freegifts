@@ -123,3 +123,20 @@ footer{
   max-width: 100px;
   margin: 0 auto;
 }
+
+.coldes3{
+  object-fit: cover;
+  max-width: 240px;
+  max-height: 4578.22px;
+}
+
+.coldes2{
+  object-fit: cover;
+  max-width: 240px;
+  max-height: 4578.22px;
+}
+
+.logogift{
+  max-width: 200px;
+  max-height: 200px;
+}

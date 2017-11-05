@@ -1,201 +1,185 @@
 {% extends "base.html" %}
 
 {% block page_content %}
-<script>
-function myFunction() {
-    var x = document.getElementById("hidden");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-        setTimeout(function(){
-          $('html, body').animate({ scrollTop: $("#hidden").offset().top}, 'slow');
-        }, 200);
-    } else {
-        x.style.display = "none";
-    }
-    var x = document.getElementById("section01");
-    if (x.style.display === "none") {
-        x.style.display = "block";
 
-    } else {
-        x.style.display = "none";
-    }
-}
-
-</script>
-
-<div class="" style="display:none;" id="hidden">
-  <div class="body container " style="margin-top: 100px">
-    <div class="row">
-      <div class="col-lg-3">
-        <div class="card mb-2">
-          <div id="htp" class="card-header">
-            <h3 class="text-center text-white">PRESENTS</h3>
-          </div>
-          <div class="card-body">
-            <img src="https://docs.google.com/uc?id=0ByQk_BXnNoNfWndaUS1SblpHNDQ" class="img-fluid" alt="">
-            <img src="https://docs.google.com/uc?id=0ByQk_BXnNoNfdjZWTlJJX2JRQTA" class="img-fluid" alt="">
-
-          </div>
-        </div>
-    </div>
-      <div class="col-lg-6 col-sm-12">
-        <form class="" action="/" method="post">
+<div class="w3-display-container">
+  <div class="" style="display:none;" id="hidden">
+    <div class="body container " style="margin-top: 100px">
+      <div class="row">
+        <div class="col-lg-3">
           <div class="card mb-2">
             <div id="htp" class="card-header">
-              <h3 class = "text-center text-white" id="htp">QUESTIONS</h3>
+                <section id="section02">
+                  <h3 class="text-center text-white">PRESENTS</h3>
+                </section>
             </div>
-            <div class="card-body" >
-              <h4 class = "text-center m-2 text-danger" style="font-family: 'Kanit', sans-serif">Multiple Choices</h4>
-              <div class="mb-2" >
-                <h5 class="text-danger" style="font-family: 'Bitter', serif">Question 1:</h5>
-                <h5 style="font-family: 'Roboto Condensed', sans-serif">{{question.question}}</h5>
-                <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{question.answerA}} <br>B. {{question.answerB}} <br>C. {{question.answerC}} <br>D. {{question.answerD}}</h5>
-                <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
-                <input type="text" name="answer1" value="">
-                <input class="d-none" type="text" name="id1" value="{{ question.id }}">
-              </div>
-              <br>
-              <div class="mb-2">
-                <h5 class="text-danger" style="font-family: 'Bitter', serif">Question 2:</h5>
-                <h5 style="font-family: 'Roboto Condensed', sans-serif">{{question2.question}}</h5>
-                <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{question2.answerA}} <br>B. {{question2.answerB}} <br>C. {{question2.answerC}} <br>D. {{question2.answerD}}</h5>
-                <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
-                <input type="text" name="answer2" value="">
-                <input class="d-none" type="text" name="id2" value="{{ question2.id }}">
-              </div>
-              <br>
-              <div class="mb-2">
-                <h5 class="text-danger" style="font-family: 'Bitter', serif">Question 3:</h5>
-                <h5 style="font-family: 'Roboto Condensed', sans-serif"> {{question3.question}}</h5>
-                <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{question3.answerA}} <br>B. {{question3.answerB}} <br>C. {{question3.answerC}} <br>D. {{question3.answerD}}</h5>
-                <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
-                <input type="text" name="answer3" value="">
-                <input class="d-none" type="text" name="id3" value="{{ question3.id }}">
-              </div>
-              <br>
-              <div class="mb-2">
-                <h5 class="text-danger" style="font-family: 'Bitter', serif">Question 4:</h5>
-                <h5 style="font-family: 'Roboto Condensed', sans-serif" > {{question4.question}}</h5>
-                <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{question4.answerA}} <br>B. {{question4.answerB}} <br>C. {{question4.answerC}} <br>D. {{question4.answerD}}</h5>
-                <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
-                <input type="text" name="answer4" value="">
-                <input class="d-none" type="text" name="id4" value="{{ question4.id }}">
-              </div>
-              <br>
-              <h4 class = "text-center mb-2 text-danger" style="font-family: 'Kanit', sans-serif">Stress</h4>
-              <div class="mb-2">
-                <h5 style="font-family: 'Roboto Condensed', sans-serif" style="font-family: 'Bitter', serif">Choose the word that has main stress placed differently from the others:</h5>
-                <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{stress.answerA}} <br>B. {{stress.answerB}} <br>C. {{stress.answerC}} <br>D. {{stress.answerD}}</h5>
-                <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
-                <input type="text" name="answer5" value="">
-                <input class="d-none" type="text" name="id5" value="{{ stress.id }}">
-              </div>
-              <div class="mb-2">
-                <h5 style="font-family: 'Roboto Condensed', sans-serif" style="font-family: 'Bitter', serif">Choose the word that has main stress placed differently from the others:</h5>
-                <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{stress2.answerA}} <br>B. {{stress2.answerB}} <br>C. {{stress2.answerC}} <br>D. {{stress2.answerD}}</h5>
-                <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
-                <input type="text" name="answer6" value="">
-                <input class="d-none" type="text" name="id6" value="{{ stress2.id }}">
-              </div>
-              <br>
-              <h4 class = "text-center mb-2 text-danger" style="font-family: 'Kanit', sans-serif">Vocabulary</h4>
-              <div class="mb-2">
-                <h5 style="font-family: 'Roboto Condensed', sans-serif" style="font-family: 'Bitter', serif"> What does {{vocab.word}} mean?</h5>
-                <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{vocab.wordA}} <br>B. {{vocab.wordB}} <br>C. {{vocab.wordC}} <br>D. {{vocab.wordD}}</h5>
-                <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
-                <input type="text" name="answer7" value="">
-                <input class="d-none" type="text" name="id7" value="{{ vocab.id }}">
-              </div>
-              <br>
-              <div class="mb-2">
-                <h5 style="font-family: 'Roboto Condensed', sans-serif" style="font-family: 'Bitter', serif"> What does {{vocab2.word}} mean?</h5>
-                <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{vocab2.wordA}} <br>B. {{vocab2.wordB}} <br>C. {{vocab2.wordC}} <br>D. {{vocab2.wordD}}</h5>
-                <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
-                <input type="text" name="answer8" value="">
-                <input class="d-none" type="text" name="id8" value="{{ vocab2.id }}">
-              </div>
-              <br>
-              <div class="mb-2">
-                <h5 style="font-family: 'Roboto Condensed', sans-serif" style="font-family: 'Bitter', serif"> What does {{vocab3.word}} mean?</h5>
-                <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{vocab3.wordA}} <br>B. {{vocab3.wordB}} <br>C. {{vocab3.wordC}} <br>D. {{vocab3.wordD}}</h5>
-                <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
-                <input type="text" name="answer9" value="">
-                <input class="d-none" type="text" name="id9" value="{{ vocab3.id }}">
-              </div>
-              <br>
-              <h4 class = "text-center m-2 text-danger" style="font-family: 'Kanit', sans-serif">Math</h4>
-              <div class="mb-2">
-                <h5 class="text-danger" style="font-family: 'Bitter', serif">Question 10:</h5>
-                <h5 style="font-family: 'Roboto Condensed', sans-serif" >{{question5.question}}</h5>
-                <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{question5.answerA}} <br>B. {{question5.answerB}} <br>C. {{question5.answerC}} <br>D. {{question5.answerD}}</h5>
-                <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
-                <input type="text" name="answer10" value="">
-                <input class="d-none" type="text" name="id10" value="{{ question5.id }}">
-              </div>
-              <br>
-            </div>
-            <div  class="card-footer" style="background-color: rgb(168,67,60)">
-              <button id="check" type="submit" name="button" class="btn text-white" ><span>Check</span></button>
+            <div class="card-body">
+              <img src="https://docs.google.com/uc?id=0ByQk_BXnNoNfWndaUS1SblpHNDQ" class="img-fluid" alt="">
+              <img src="https://docs.google.com/uc?id=0ByQk_BXnNoNfdjZWTlJJX2JRQTA" class="img-fluid" alt="">
+
             </div>
           </div>
-        </form>
       </div>
+        <div class="col-lg-6 col-sm-12">
+          <form class="" action="/" method="post">
+            <div class="card mb-2">
+              <div id="htp" class="card-header">
+                <h3 class = "text-center text-white" id="htp">QUESTIONS</h3>
+              </div>
+              <div class="card-body" >
+                <h4 class = "text-center m-2 text-danger" style="font-family: 'Kanit', sans-serif">Multiple Choices</h4>
+                <div class="mb-2">
+                  <h5 class="text-danger" style="font-family: 'Bitter', serif">Question 1:</h5>
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif">{{question.question}}</h5>
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{question.answerA}} <br>B. {{question.answerB}} <br>C. {{question.answerC}} <br>D. {{question.answerD}}</h5>
+                  <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
+                  <input type="text" name="answer1" value="">
+                  <input class="d-none" type="text" name="id1" value="{{ question.id }}">
+                </div>
+                <br>
+                <div class="mb-2">
+                  <h5 class="text-danger" style="font-family: 'Bitter', serif">Question 2:</h5>
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif">{{question2.question}}</h5>
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{question2.answerA}} <br>B. {{question2.answerB}} <br>C. {{question2.answerC}} <br>D. {{question2.answerD}}</h5>
+                  <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
+                  <input type="text" name="answer2" value="">
+                  <input class="d-none" type="text" name="id2" value="{{ question2.id }}">
+                </div>
+                <br>
+                <div class="mb-2">
+                  <h5 class="text-danger" style="font-family: 'Bitter', serif">Question 3:</h5>
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif"> {{question3.question}}</h5>
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{question3.answerA}} <br>B. {{question3.answerB}} <br>C. {{question3.answerC}} <br>D. {{question3.answerD}}</h5>
+                  <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
+                  <input type="text" name="answer3" value="">
+                  <input class="d-none" type="text" name="id3" value="{{ question3.id }}">
+                </div>
+                <br>
+                <div class="mb-2">
+                  <h5 class="text-danger" style="font-family: 'Bitter', serif">Question 4:</h5>
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif" > {{question4.question}}</h5>
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{question4.answerA}} <br>B. {{question4.answerB}} <br>C. {{question4.answerC}} <br>D. {{question4.answerD}}</h5>
+                  <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
+                  <input type="text" name="answer4" value="">
+                  <input class="d-none" type="text" name="id4" value="{{ question4.id }}">
+                </div>
+                <br>
+                <h4 class = "text-center mb-2 text-danger" style="font-family: 'Kanit', sans-serif">Stress</h4>
+                <div class="mb-2">
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif" style="font-family: 'Bitter', serif">Choose the word that has main stress placed differently from the others:</h5>
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{stress.answerA}} <br>B. {{stress.answerB}} <br>C. {{stress.answerC}} <br>D. {{stress.answerD}}</h5>
+                  <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
+                  <input type="text" name="answer5" value="">
+                  <input class="d-none" type="text" name="id5" value="{{ stress.id }}">
+                </div>
+                <div class="mb-2">
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif" style="font-family: 'Bitter', serif">Choose the word that has main stress placed differently from the others:</h5>
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{stress2.answerA}} <br>B. {{stress2.answerB}} <br>C. {{stress2.answerC}} <br>D. {{stress2.answerD}}</h5>
+                  <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
+                  <input type="text" name="answer6" value="">
+                  <input class="d-none" type="text" name="id6" value="{{ stress2.id }}">
+                </div>
+                <br>
+                <h4 class = "text-center mb-2 text-danger" style="font-family: 'Kanit', sans-serif">Vocabulary</h4>
+                <div class="mb-2">
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif" style="font-family: 'Bitter', serif"> What does {{vocab.word}} mean?</h5>
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{vocab.wordA}} <br>B. {{vocab.wordB}} <br>C. {{vocab.wordC}} <br>D. {{vocab.wordD}}</h5>
+                  <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
+                  <input type="text" name="answer7" value="">
+                  <input class="d-none" type="text" name="id7" value="{{ vocab.id }}">
+                </div>
+                <br>
+                <div class="mb-2">
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif" style="font-family: 'Bitter', serif"> What does {{vocab2.word}} mean?</h5>
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{vocab2.wordA}} <br>B. {{vocab2.wordB}} <br>C. {{vocab2.wordC}} <br>D. {{vocab2.wordD}}</h5>
+                  <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
+                  <input type="text" name="answer8" value="">
+                  <input class="d-none" type="text" name="id8" value="{{ vocab2.id }}">
+                </div>
+                <br>
+                <div class="mb-2">
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif" style="font-family: 'Bitter', serif"> What does {{vocab3.word}} mean?</h5>
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{vocab3.wordA}} <br>B. {{vocab3.wordB}} <br>C. {{vocab3.wordC}} <br>D. {{vocab3.wordD}}</h5>
+                  <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
+                  <input type="text" name="answer9" value="">
+                  <input class="d-none" type="text" name="id9" value="{{ vocab3.id }}">
+                </div>
+                <br>
+                <h4 class = "text-center m-2 text-danger" style="font-family: 'Kanit', sans-serif">Math</h4>
+                <div class="mb-2">
+                  <h5 class="text-danger" style="font-family: 'Bitter', serif">Question 10:</h5>
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif" >{{question5.question}}</h5>
+                  <h5 style="font-family: 'Roboto Condensed', sans-serif">A. {{question5.answerA}} <br>B. {{question5.answerB}} <br>C. {{question5.answerC}} <br>D. {{question5.answerD}}</h5>
+                  <label id="ans" for="" style="font-family: 'Bitter', serif" class="text-danger">Answer</label>
+                  <input type="text" name="answer10" value="">
+                  <input class="d-none" type="text" name="id10" value="{{ question5.id }}">
+                </div>
+                <br>
+              </div>
+              <div  class="card-footer" style="background-color: rgb(168,67,60)">
+                <button id="check" type="submit" name="button" class="btn text-white" ><span>Check</span></button>
+              </div>
+            </div>
+          </form>
+        </div>
 
-      <div class="col-lg-3">
+        <div class="col-lg-3">
+          <div class="card">
+            <div id="htp" class="card-header">
+              <h3 id="htp" class="text-center text-white">HOW TO PLAY</h3>
+            </div>
+            <div class="card-body">
+              <br>
+              <ul class="" style="font-family: 'Roboto Condensed', sans-serif">
+                <li>Answer the questions to receive the gifts</li>
+                <li>You only need to type A,B,C,D or a,b,c,d</li>
+                <li class="text-danger">IF YOU GET MORE THAN 5 CORRECT ANSWERS, PRIZE WILL BE GIVEN</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="my-5 brd" >
         <div class="card">
-          <div id="htp" class="card-header">
-            <h3 id="htp" class="text-center text-white">HOW TO PLAY</h3>
-          </div>
-          <div class="card-body">
-            <br>
-            <ul class="" style="font-family: 'Roboto Condensed', sans-serif">
-              <li>Answer the questions to receive the gifts</li>
-              <li>You only need to type A,B,C,D or a,b,c,d</li>
-              <li class="text-danger">IF YOU GET MORE THAN 5 CORRECT ANSWERS, PRIZE WILL BE GIVEN</li>
-            </ul>
+          <div class="card-header" style="background-color:  rgb(168,67,60)">
+            <h3 id="spons" class="text-white text-center" >Sponsors</h3>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="my-5 brd" >
-      <div class="card">
-        <div class="card-header" style="background-color:  rgb(168,67,60)">
-          <h3 id="spons" class="text-white text-center" >Partners</h3>
+        <div class="row m-1">
+          <a id="cpr" href="http://techkids.vn/">
+            <img id="cpr" src="https://i.imgur.com/x1EAzV8.jpg" alt="">
+          </a>
+          <a id="cpr" href="https://www.facebook.com/kecapkhonggian.wwv/">
+            <img id="cpr" src="https://i.imgur.com/3pEzb8U.jpg" alt="">
+          </a>
+
+          <a id="cpr" href="https://www.pizzahut.com/">
+            <img id="cpr" src="https://i.imgur.com/C8GjR3F.jpg" alt="">
+          </a>
+
+          <a id="cpr" href="https://www.starbucks.com/">
+            <img id="cpr" src="https://i.imgur.com/D2zPAEP.jpg" alt="">
+          </a>
+
+          <a href="https://www.maccosmetics.com/">
+            <img id="cpr" src="https://i.imgur.com/xTPyjc3.jpg" alt="">
+          </a>
+
+          <a href="https://www.instagram.com/nos_vetements/">
+            <img id="cpr" src="https://i.imgur.com/ZEDVDIz.jpg" alt="">
+          </a>
         </div>
       </div>
-      <div class="row m-1">
-        <a target="_blank" id="cpr" href="http://techkids.vn/">
-          <img id="cpr" src="https://i.imgur.com/x1EAzV8.jpg" alt="">
-        </a>
-        <a target="_blank" id="cpr" href="https://www.facebook.com/kecapkhonggian.wwv/">
-          <img id="cpr" src="https://i.imgur.com/3pEzb8U.jpg" alt="">
-        </a>
 
-        <a target="_blank" id="cpr" href="https://www.pizzahut.com/">
-          <img id="cpr" src="https://i.imgur.com/C8GjR3F.jpg" alt="">
-        </a>
 
-        <a target="_blank" id="cpr" href="https://www.starbucks.com/">
-          <img id="cpr" src="https://i.imgur.com/D2zPAEP.jpg" alt="">
-        </a>
-
-        <a target="_blank" id="cpr" href="https://www.maccosmetics.com/">
-          <img id="cpr" src="https://i.imgur.com/xTPyjc3.jpg" alt="">
-        </a>
-
-        <a target="_blank" id="cpr" href="https://www.instagram.com/nos_vetements/">
-          <img id="cpr" src="https://i.imgur.com/ZEDVDIz.jpg" alt="">
-        </a>
       </div>
-    </div>
 
+      <footer>
+        <h6 id= "footer"class="lead float-right text-white mr-4 mt-2"> Copyright (c) Cadeaux</h6>
+      </footer>
+  </div>
 
-    </div>
-
-  </div>  
 </div>
-
-
 
 
 

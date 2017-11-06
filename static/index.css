@@ -135,7 +135,7 @@ footer{
 
 .logomenu{
   max-height: 52.8px;
-  max-width: 100px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -172,4 +172,10 @@ footer{
 .chek{
   width: 50%;
   height: 50%;
+}
+
+.amn{
+  background-color: white;
+  min-width: 5%;
+  min-height: 5%;
 }

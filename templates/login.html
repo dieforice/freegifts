@@ -1,23 +1,42 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Free Gifts</title>
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Kanit|Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
-{% block page_content %}
-<div class="container">
-  <form class="login-form justify-content-center my-5" action="/login" method="post">
-    <div class="form-group">
-      <label name="username" class="" for="">Your ID</label>
-      <input class="form-control" type="text" name="username" value="">
-    </div>
-    <div class="form-group">
-      <label class="" for="">Password</label>
-      <input class="form-control" type="password" name="password" value="">
-    </div>
-    <button id="check" type="submit" name="button" class="btn btn-danger">Login</button>
-  </form>
-</div>
-{% for message in get_flashed_messages() %}
-<div class="text-danger login-form">
-  {{ message }}
-</div>
-{% endfor %}
+  </head>
+  <div class="topnav">
 
-{% endblock%}
+    <div class="row">
+      <a href="/" class="ml-3"><i class="fa fa-home" aria-hidden="true"></i></a>
+      <a href="/math">MATH</a>
+      <a href="/about">ABOUT</a>
+    </div>
+
+  </div>
+  <img src="https://i.imgur.com/LNeuV09.jpg" alt="" class="img-fluid">
+  <body oncontextmenu="return false">
+    <div class="container">
+      <form class="login-form justify-content-center my-5" action="/login" method="post">
+        <div class="form-group">
+          <label name="username" class="" for="">Your ID</label>
+          <input class="form-control" type="text" name="username" value="">
+        </div>
+        <div class="form-group">
+          <label class="" for="">Password</label>
+          <input class="form-control" type="password" name="password" value="">
+        </div>
+        <button id="check" type="submit" name="button" class="btn btn-danger">Login</button>
+      </form>
+    </div>
+    {% for message in get_flashed_messages() %}
+    <div class="text-danger login-form">
+      {{ message }}
+    </div>
+    {% endfor %}

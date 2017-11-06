@@ -35,5 +35,5 @@ class Math(Document):
     correct_answer = StringField()
 
 #task = Vocab(word = "reactor", wordA = "steel", wordB = "device", wordC = "rocket", wordD = "law", correct_word = "device")
-#task = Math(question = "If 3^(5x) = 27^4, what is the value of x?", answerA = "9/c", answerB = "100c/3", answerC = "300/c", answerD = "c/100", correct_answer = "C")
+#task = Question(question = "The coach does not expect his players to be _____, that is, lacking energy before an important game", answerA = "irksome", answerB = "pejorative", answerC = "verisimilitude", answerD = "listless", correct_answer = "C")
 #task.save()

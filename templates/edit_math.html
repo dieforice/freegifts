@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container">
+  <form class="" action="/edit_math/{{math_edit.id}}"  enctype="multipart/form-data" method="post">
+    <div class="form-group">
+      <label for="" class= "d-block">Question</label>
+      <textarea name="question" rows="5" cols="60" class = "form-control">{{math_edit.question}}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="" class= "d-block">Answer A</label>
+      <input type="text" name="answerA" value="{{math_edit.answerA}}" class = "form-control">
+    </div>
+    <div class="form-group">
+      <label for="" class= "d-block">Answer B</label>
+      <input type="text" name="answerB" value="{{math_edit.answerB}}" class = "form-control">
+    </div>
+    <div class="form-group">
+      <label for="" class= "d-block">Answer C</label>
+      <input type="text" name="answerC" value="{{math_edit.answerC}}" class = "form-control">
+    </div>
+    <div class="form-group">
+      <label for="" class= "d-block">Answer D</label>
+      <input type="text" name="answerD" value="{{math_edit.answerD}}" class = "form-control">
+    </div>
+    <div class="form-group">
+      <label for="" class= "d-block">Correct Answer</label>
+      <input type="text" name="correct_answer" value="{{math_edit.correct_answer}}" class = "form-control">
+    </div>
+    <button type="submit" class = "form-control btn btn-danger" name="button">Submit</button>
+  </form>
+</div>
+
+{% endblock %}

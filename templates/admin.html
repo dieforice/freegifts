@@ -121,6 +121,41 @@
         </div>
 
         <div class="container">
+          <h3 class ="text-center text-danger mb-3">1/2 Math</h3>
+          <table class="table table-inverse">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Question</th>
+                <th>Answer A</th>
+                <th>Answer B</th>
+                <th>Answer C</th>
+                <th>Answer D</th>
+                <th>Correct Answer</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for mth in math %}
+              <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ mth.question }}</td>
+                <td>{{ mth.answerA }}</td>
+                <td>{{ mth.answerB }}</td>
+                <td>{{ mth.answerC }}</td>
+                <td>{{ mth.answerD }}</td>
+                <td >{{ mth.correct_answer }}</td>
+                <td>
+                    <a href="/edit_math/{{mth.id}}">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+            </table>
+          </div>
+        <div class="container">
           <table class="table table-inverse">
             <thead>
               <tr>
@@ -137,7 +172,7 @@
                 <td><a href="{{gift.gift}}">Picture</a></td>
                 <td>{{gift.gift_name}}</td>
                 <td>
-                    <a href="">
+                    <a href="edit_gift/{{gift.id}}">
                       <i class="fa fa-pencil" aria-hidden="true"></i>
                     </a>
                 </td>

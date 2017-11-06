@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container">
+  <form class="" action="/edit_gift/{{gift_edit.id}}"  enctype="multipart/form-data" method="post">
+    <div class="form-group">
+      <img src="{{gift_edit.gift}}" alt="" class = "hellobaby img-fluid">
+      <label for="" class = "d-block">Gift Pic</label>
+      <input type="text" name="gift" value="{{gift_edit.gift}}" class = "form-control">
+    </div>
+    <div class="form-group">
+      <label for="" class = "d-block">Gift Name</label>
+      <input type="text" name="gift_name" value="{{gift_edit.gift_name}}" class = "form-control">
+    </div>
+    <button type="submit" class = "form-control btn btn-danger" name="button">Submit</button>
+  </form>
+</div>
+{% endblock%}

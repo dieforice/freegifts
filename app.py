@@ -21,10 +21,11 @@ def index():
     e = random.randint(40,49)
     f = random.randint(50,69)
     g = random.randint(70,89)
+    k = random.randint(90,109)
     h = random.randint(0,19)
     j = random.randint(20,39)
     if request.method == "GET":
-        return render_template('index.html', question=Question.objects()[h], question2=Question.objects()[f], question3=Question.objects()[g], question4=Question.objects()[j],question5 =Question.objects()[e], stress=Stress.objects()[a],stress2 = Stress.objects()[b], vocab= Vocab.objects()[a], vocab2= Vocab.objects()[b], vocab3= Vocab.objects()[c] )
+        return render_template('index.html',math = Math.objects()[h], question=Question.objects()[h], question2=Question.objects()[f], question3=Question.objects()[g], question4=Question.objects()[j],question5 =Question.objects()[e],question6 = Question.objects()[k], stress=Stress.objects()[a],stress2 = Stress.objects()[b], vocab= Vocab.objects()[a], vocab2= Vocab.objects()[b], vocab3= Vocab.objects()[c] )
     elif request.method == "POST":
         form = request.form
         answer1 = form["answer1"]
@@ -37,6 +38,8 @@ def index():
         answer8 = form["answer8"]
         answer9 = form["answer9"]
         answer10 = form["answer10"]
+        answer11 = form["answer11"]
+        answer12 = form["answer12"]
         id1 = form['id1']
         id2 = form['id2']
         id3 = form['id3']
@@ -47,16 +50,20 @@ def index():
         id8 = form['id8']
         id9 = form['id9']
         id10 = form['id10']
+        id11 = form['id11']
+        id12 = form['id12']
         question1 = Question.objects().with_id(id1)
         question2 = Question.objects().with_id(id2)
         question3 = Question.objects().with_id(id3)
         question4 = Question.objects().with_id(id4)
         question5 = Question.objects().with_id(id10)
+        question6 = Question.objects().with_id(id11)
         stress1 = Stress.objects().with_id(id5)
         stress2 = Stress.objects().with_id(id6)
         vocab = Vocab.objects().with_id(id7)
         vocab2 = Vocab.objects().with_id(id8)
         vocab3 = Vocab.objects().with_id(id9)
+        math = Math.objects().with_id(id12)
         if answer1.upper() == question1.correct_answer:
             point += 1
         if answer2.upper() == question2.correct_answer:
@@ -77,28 +84,36 @@ def index():
             point += 1
         if answer10.upper() == question5.correct_answer:
             point += 1
-        if point < 6:
+        if answer11.upper() == question6.correct_answer:
+            point += 1
+        if answer12.upper() == math.correct_answer:
+            point += 1
+        if point < 7:
             return render_template('no_gift.html', point = point)
-        if point == 6:
+        if point == 7:
             z = random.randint(0,1)
             user_gift = Gift.objects()[z]
             #gift_id = str(user_gift.id)
             return render_template('send_gift.html', user_gift = user_gift, point= point)
-        elif point == 7:
+        elif point == 8:
             z = random.randint(2,3)
             user_gift = Gift.objects()[z]
             #gift_id = str(user_gift.id)
             return render_template('send_gift.html', user_gift = user_gift, point= point)
-        elif point == 8:
+        elif point == 9:
             z = random.randint(4,5)
             user_gift = Gift.objects()[z]
             #gift_id = str(user_gift.id)
             return render_template('send_gift.html', user_gift = user_gift, point= point)
-        elif point == 9:
+        elif point == 10:
             user_gift = Gift.objects()[6]
             #gift_id = str(user_gift.id)
             return render_template('send_gift.html', user_gift = user_gift, point= point)
-        elif point == 10:
+        elif point == 11:
+            z = random.randint(8,9)
+            user_gift = Gift.objects()[z]
+            return render_template('send_gift.html', user_gift = user_gift, point= point)
+        elif point == 12:
             user_gift = Gift.objects()[7]
             #gift_id = str(user_gift.id)
             return render_template('send_gift.html', user_gift = user_gift, point= point)
@@ -110,7 +125,7 @@ def admin():
         if "admin" not in session:
             return abort(403)
         else:
-            return render_template('admin.html', questions=Question.objects(), stress = Stress.objects(), vocab = Vocab.objects(), gifts = Gift.objects())
+            return render_template('admin.html', questions=Question.objects(), stress = Stress.objects(), vocab = Vocab.objects(), gifts = Gift.objects(), math = Math.objects())
 
 @app.route('/login', methods = ["GET", "POST"])
 def login():
@@ -155,6 +170,23 @@ def edit_mp(question_id):
         question_edit.update(set__question = question, set__answerA= answerA, set__answerB =answerB, set__answerC = answerC, set__answerD= answerD, set__correct_answer = correct_answer)
         return redirect('/admin')
 
+@app.route('/edit_math/<math_id>', methods = ["GET","POST"])
+def edit_math(math_id):
+    math_edit= Math.objects().with_id(math_id)
+    if request.method == "GET":
+        if math_edit is not None:
+            return render_template('edit_math.html', math_edit = math_edit)
+    elif request.method =="POST":
+        form = request.form
+        question = form["question"]
+        answerA = form["answerA"]
+        answerB = form["answerB"]
+        answerC = form["answerC"]
+        answerD = form["answerD"]
+        correct_answer = form["correct_answer"]
+        math_edit.update(set__question = question, set__answerA= answerA, set__answerB =answerB, set__answerC = answerC, set__answerD= answerD, set__correct_answer = correct_answer)
+        return redirect('/admin')
+
 @app.route('/edit_stress/<question_id>', methods = ["GET","POST"])
 def edit_stress(question_id):
     question_edit= Stress.objects().with_id(question_id)
@@ -188,6 +220,19 @@ def edit_vocab(vocab_id):
         vocab_edit.update(set__word = word, set__wordA= wordA, set__wordB =wordB, set__wordC = wordC, set__wordD= wordD, set__correct_word = correct_word)
         return redirect('/admin')
 
+@app.route('/edit_gift/<gift_id>', methods = ["GET","POST"])
+def edit_gift(gift_id):
+    gift_edit = Gift.objects().with_id(gift_id)
+    if request.method == "GET":
+        if gift_edit is not None:
+            return render_template('gift_edit.html', gift_edit = gift_edit)
+    elif request.method == "POST":
+        form = request.form
+        gift = form["gift"]
+        gift_name = form["gift_name"]
+        gift_edit.update(set__gift = gift, set__gift_name = gift_name)
+        return redirect('/admin')
+
 @app.route('/send_gift/<gift_id>', methods = ["GET", "POST"])
 def send_gift(gift_id):
     user_gift = Gift.objects().with_id(gift_id)
@@ -202,10 +247,6 @@ def send_gift(gift_id):
         msg = Message(wish,to=email,text = user_gift.gift)
         gmail.send(msg)
         return render_template('gift_sent.html')
-@app.route('/admingift', methods = ["GET", "POST"])
-def admingift():
-    if request.method == "GET":
-        return render_template('admingift.html',gifts = Gift.objects())
 
 @app.route('/about')
 def about():

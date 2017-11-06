@@ -3,7 +3,7 @@ import os
 import mlab
 import random
 from mongoengine import *
-from models.questions import Question, Stress, Vocab
+from models.questions import Question, Stress, Vocab, Math
 from models.users import User
 from models.gifts import Gift
 from gmail import *
@@ -193,7 +193,7 @@ def send_gift(gift_id):
     user_gift = Gift.objects().with_id(gift_id)
     if request.method == "GET":
         if user_gift is not None:
-            return render_template('send_gift.html', user_gift = user_gift)
+            return str("Take the test plz")
     if request.method == "POST":
         form = request.form
         email = form["email"]
